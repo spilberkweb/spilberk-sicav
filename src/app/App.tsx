@@ -711,7 +711,13 @@ export default function App() {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: 16 }}>
           {filtered.map((p, i) => (
-            <div key={i} style={S.card}>
+            <div 
+              key={i} 
+              style={{ ...S.card, cursor: p.link ? "pointer" : "default" }}
+              onClick={() => {
+                if (p.link) window.open(`https://${p.link}`, '_blank', 'noopener,noreferrer');
+              }}
+            >
               <div style={{ height: 180, backgroundImage: `url(${p.img})`, backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
                 <div style={{
                   position: "absolute",
