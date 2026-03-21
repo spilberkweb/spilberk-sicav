@@ -54,11 +54,11 @@ function SRIGauge() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            background: i <= 3 ? (i === 3 ? "#C8A96E" : "rgba(200,169,110,0.4)") : "rgba(255,255,255,0.06)",
-            border: i === 3 ? "2px solid #FFE292" : "1px solid rgba(255,255,255,0.08)",
+            background: i <= 3 ? (i === 3 ? "var(--chart-3)" : "color-mix(in srgb, var(--chart-3) 20%, transparent)") : "color-mix(in srgb, var(--foreground) 4%, transparent)",
+            border: i === 3 ? "2px solid var(--chart-3)" : "1px solid color-mix(in srgb, var(--foreground) 5%, transparent)",
             fontSize: 13,
             fontWeight: i === 3 ? 800 : 500,
-            color: i <= 3 ? "#0D0536" : "rgba(255,255,255,0.25)",
+            color: i <= 3 ? "var(--foreground)" : "color-mix(in srgb, var(--foreground) 30%, transparent)",
           }}
         >
           {i}
@@ -91,8 +91,8 @@ function NAVChart({ label }: { label: string }) {
     <svg viewBox={`0 0 ${w} ${h}`} style={{ width: "100%" }}>
       <defs>
         <linearGradient id="ng" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#C8A96E" stopOpacity="0.25" />
-          <stop offset="100%" stopColor="#C8A96E" stopOpacity="0" />
+          <stop offset="0%" stopColor="var(--chart-3)" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="var(--chart-3)" stopOpacity="0" />
         </linearGradient>
       </defs>
       {[0, 500, 1000, 1500].map(v => (
@@ -102,14 +102,14 @@ function NAVChart({ label }: { label: string }) {
             x2={w - px}
             y1={py + cH - v / max * cH}
             y2={py + cH - v / max * cH}
-            stroke="rgba(255,255,255,0.05)"
+            stroke="color-mix(in srgb, var(--foreground) 5%, transparent)"
             strokeDasharray="3,3"
           />
           <text
             x={px - 6}
             y={py + cH - v / max * cH + 4}
             textAnchor="end"
-            fill="rgba(255,255,255,0.25)"
+            fill="color-mix(in srgb, var(--foreground) 40%, transparent)"
             fontSize="9"
             fontFamily="inherit"
           >
@@ -118,15 +118,15 @@ function NAVChart({ label }: { label: string }) {
         </g>
       ))}
       <path d={area} fill="url(#ng)" />
-      <path d={line} fill="none" stroke="#C8A96E" strokeWidth="2.5" strokeLinejoin="round" />
+      <path d={line} fill="none" stroke="var(--chart-3)" strokeWidth="2.5" strokeLinejoin="round" />
       {pts.map(p => (
         <g key={p.y}>
-          <circle cx={p.x} cy={p.y} r="4" fill="#0D0536" stroke="#C8A96E" strokeWidth="2" />
+          <circle cx={p.x} cy={p.y} r="4" fill="var(--card)" stroke="var(--chart-3)" strokeWidth="2" />
           <text
             x={p.x}
             y={h - 2}
             textAnchor="middle"
-            fill="rgba(255,255,255,0.4)"
+            fill="color-mix(in srgb, var(--foreground) 40%, transparent)"
             fontSize="9"
             fontFamily="inherit"
           >
@@ -136,9 +136,9 @@ function NAVChart({ label }: { label: string }) {
             x={p.x}
             y={p.y - 10}
             textAnchor="middle"
-            fill="white"
+            fill="var(--foreground)"
             fontSize="9"
-            fontWeight="600"
+            fontWeight="700"
             fontFamily="inherit"
           >
             {(p.v / 1000).toFixed(2)}
@@ -149,7 +149,7 @@ function NAVChart({ label }: { label: string }) {
         x={w / 2}
         y={12}
         textAnchor="middle"
-        fill="rgba(255,255,255,0.3)"
+        fill="color-mix(in srgb, var(--foreground) 40%, transparent)"
         fontSize="9"
         fontFamily="inherit"
       >
@@ -162,16 +162,16 @@ function NAVChart({ label }: { label: string }) {
 function PerfBar({ year, val }: { year: string; val: number }) {
   return (
     <div style={{ textAlign: "center" }}>
-      <div style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", marginBottom: 6 }}>{year}</div>
+      <div style={{ fontSize: 11, color: "color-mix(in srgb, var(--foreground) 40%, transparent)", marginBottom: 6 }}>{year}</div>
       <div style={{ height: 100, display: "flex", alignItems: "flex-end", justifyContent: "center", marginBottom: 6 }}>
         <div style={{
           width: 36,
           height: `${(val / 8) * 100}%`,
-          background: "linear-gradient(180deg, #FFE292 0%, #C8A96E 100%)",
+          background: "var(--chart-3)",
           borderRadius: "4px 4px 0 0"
         }} />
       </div>
-      <div style={{ fontSize: 16, fontWeight: 700, color: "#C8A96E" }}>{val}%</div>
+      <div style={{ fontSize: 16, fontWeight: 700, color: "var(--chart-3)" }}>{val}%</div>
     </div>
   );
 }
@@ -248,29 +248,31 @@ export default function App() {
     { ...teamData[6], img: null },
   ];
 
+  // Objekt nyní plně napojený na CSS proměnné z theme.css
   const c = {
-    gold: "#C8A96E",
-    goldLight: "#FFE292",
-    bg: "#0A0428",
-    bgCard: "rgba(255,255,255,0.035)",
-    border: "rgba(255,255,255,0.07)",
-    muted: "rgba(255,255,255,0.45)",
-    faint: "rgba(255,255,255,0.3)"
+    gold: "var(--chart-3)",
+    bg: "var(--background)",
+    card: "var(--card)",
+    text: "var(--foreground)",
+    border: "var(--border)",
+    muted: "var(--muted-foreground)",
+    faint: "color-mix(in srgb, var(--foreground) 50%, transparent)",
+    ghostHover: "color-mix(in srgb, var(--foreground) 10%, transparent)"
   };
 
   const S = {
     section: { maxWidth: 1120, margin: "0 auto", padding: "90px 36px" },
     label: { fontSize: 10, textTransform: "uppercase" as const, letterSpacing: 3, color: c.gold, fontWeight: 700, marginBottom: 10, display: "block" },
-    h2: { fontSize: "clamp(24px, 4vw, 34px)", fontWeight: 700, lineHeight: 1.2, marginBottom: 16 },
+    h2: { fontSize: "clamp(24px, 4vw, 34px)", fontWeight: 700, lineHeight: 1.2, marginBottom: 16, color: c.text },
     sub: { fontSize: 15, color: c.muted, lineHeight: 1.7, marginBottom: 40, maxWidth: "100%" },
-    card: { background: c.bgCard, border: `1px solid ${c.border}`, borderRadius: 14, overflow: "hidden", transition: "border-color 0.3s, transform 0.3s" },
-    kpi: { background: c.bgCard, border: `1px solid ${c.border}`, borderRadius: 14, padding: "26px 28px", textAlign: "center" as const },
-    cta: { display: "inline-flex", alignItems: "center", gap: 8, padding: "15px 34px", background: `linear-gradient(135deg, ${c.gold}, ${c.goldLight})`, color: c.bg, fontWeight: 700, fontSize: 14, border: "none", borderRadius: 50, cursor: "pointer" },
-    ghost: { display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 28px", background: "transparent", color: "white", fontWeight: 600, fontSize: 13, border: "1px solid rgba(255,255,255,0.18)", borderRadius: 50, cursor: "pointer" },
+    card: { background: c.card, border: `1px solid ${c.border}`, borderRadius: 14, overflow: "hidden", transition: "border-color 0.3s, transform 0.3s", boxShadow: "0 4px 15px rgba(0,0,0,0.03)" },
+    kpi: { background: c.card, border: `1px solid ${c.border}`, borderRadius: 14, padding: "26px 28px", textAlign: "center" as const, boxShadow: "0 4px 15px rgba(0,0,0,0.03)" },
+    cta: { display: "inline-flex", alignItems: "center", gap: 8, padding: "15px 34px", background: c.gold, color: "var(--background)", fontWeight: 700, fontSize: 14, border: "none", borderRadius: 50, cursor: "pointer", transition: "opacity 0.2s" },
+    ghost: { display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 28px", background: "transparent", color: c.text, fontWeight: 600, fontSize: 13, border: `1px solid color-mix(in srgb, var(--foreground) 20%, transparent)`, borderRadius: 50, cursor: "pointer" },
   };
 
   return (
-    <div style={{ fontFamily: "'DM Sans','Segoe UI',sans-serif", background: c.bg, color: "white", minHeight: "100vh", overflowX: "hidden" }}>
+    <div style={{ fontFamily: "'DM Sans','Segoe UI',sans-serif", background: c.bg, color: c.text, minHeight: "100vh", overflowX: "hidden" }}>
       <style>{`
         .desktop-menu { display: none !important; }
         .mobile-menu-btn { display: flex !important; }
@@ -280,8 +282,9 @@ export default function App() {
           .mobile-menu-dropdown { display: none !important; }
         }
       `}</style>
-      {/* ═══ NAV ═══ */}
-      <nav style={{
+
+      {/* ═══ NAV ═══ (Přidána třída "dark" pro vynucení tmavého vzhledu z theme.css) */}
+      <nav className="dark" style={{
         position: "fixed",
         top: 0,
         left: 0,
@@ -293,7 +296,7 @@ export default function App() {
         justifyContent: "space-between",
         alignItems: "center",
         gap: 16,
-        background: scrollY > 60 ? "rgba(10,4,40,0.92)" : "transparent",
+        background: scrollY > 60 ? "color-mix(in srgb, var(--background) 96%, transparent)" : "transparent",
         backdropFilter: scrollY > 60 ? "blur(24px)" : "none",
         borderBottom: scrollY > 60 ? `1px solid ${c.border}` : "none",
         transition: "all 0.35s"
@@ -302,7 +305,7 @@ export default function App() {
           <div style={{
             width: 34,
             height: 34,
-            background: `linear-gradient(135deg,${c.gold},${c.goldLight})`,
+            background: c.gold,
             borderRadius: 7,
             display: "flex",
             alignItems: "center",
@@ -311,7 +314,7 @@ export default function App() {
             color: c.bg,
             fontSize: 15
           }}>S</div>
-          <span style={{ fontSize: 16, fontWeight: 700, letterSpacing: 2.5 }}>SPILBERK</span>
+          <span style={{ fontSize: 16, fontWeight: 700, letterSpacing: 2.5, color: c.text }}>SPILBERK</span>
           <span style={{ fontSize: 9, color: c.faint, letterSpacing: 1.5, marginLeft: 4 }}>FUND</span>
         </div>
         
@@ -319,11 +322,11 @@ export default function App() {
           className="mobile-menu-btn"
           onClick={() => setMenuOpen(!menuOpen)}
           style={{
-            background: "rgba(255,255,255,0.05)",
+            background: c.ghostHover,
             border: `1px solid ${c.border}`,
             borderRadius: 8,
             padding: "8px",
-            color: "white",
+            color: c.text,
             cursor: "pointer",
             alignItems: "center",
             justifyContent: "center",
@@ -359,7 +362,7 @@ export default function App() {
                 }
               }}
               style={{ 
-                color: "rgba(255,255,255,0.55)", 
+                color: c.faint, 
                 textDecoration: "none", 
                 fontSize: 12.5, 
                 fontWeight: 500,
@@ -367,8 +370,8 @@ export default function App() {
                 whiteSpace: "nowrap",
                 transition: "color 0.2s"
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = c.goldLight)}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.55)")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = c.gold)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = c.faint)}
             >
               {item.label}
             </a>
@@ -383,9 +386,9 @@ export default function App() {
                   fontSize: 10,
                   fontWeight: 600,
                   textTransform: "uppercase",
-                  border: lang === l ? `1px solid ${c.gold}` : "1px solid rgba(255,255,255,0.15)",
-                  background: lang === l ? "rgba(200,169,110,0.15)" : "transparent",
-                  color: lang === l ? c.goldLight : "rgba(255,255,255,0.5)",
+                  border: lang === l ? `1px solid ${c.gold}` : `1px solid ${c.border}`,
+                  background: lang === l ? "color-mix(in srgb, var(--chart-3) 15%, transparent)" : "transparent",
+                  color: lang === l ? c.gold : c.faint,
                   borderRadius: 4,
                   cursor: "pointer",
                   transition: "all 0.2s"
@@ -406,7 +409,7 @@ export default function App() {
             top: "100%",
             left: 0,
             right: 0,
-            background: scrollY > 60 ? "rgba(10,4,40,0.98)" : c.bg,
+            background: scrollY > 60 ? "color-mix(in srgb, var(--background) 98%, transparent)" : c.bg,
             backdropFilter: "blur(24px)",
             borderBottom: menuOpen ? `1px solid ${c.border}` : "none",
             borderTop: menuOpen ? `1px solid ${c.border}` : "none",
@@ -444,12 +447,12 @@ export default function App() {
                   }
                 }}
                 style={{ 
-                  color: "white", 
+                  color: c.text, 
                   textDecoration: "none", 
                   fontSize: 16, 
                   fontWeight: 600,
                   padding: "6px 0",
-                  borderBottom: `1px solid rgba(255,255,255,0.05)`
+                  borderBottom: `1px solid ${c.border}`
                 }}
               >
                 {item.label}
@@ -471,9 +474,9 @@ export default function App() {
                     fontSize: 12,
                     fontWeight: 700,
                     textTransform: "uppercase",
-                    border: lang === l ? `1px solid ${c.gold}` : "1px solid rgba(255,255,255,0.15)",
-                    background: lang === l ? "rgba(200,169,110,0.15)" : "transparent",
-                    color: lang === l ? c.goldLight : "rgba(255,255,255,0.5)",
+                    border: lang === l ? `1px solid ${c.gold}` : `1px solid ${c.border}`,
+                    background: lang === l ? "color-mix(in srgb, var(--chart-3) 15%, transparent)" : "transparent",
+                    color: lang === l ? c.gold : c.faint,
                     borderRadius: 6,
                   }}
                 >
@@ -486,41 +489,43 @@ export default function App() {
         </div>
       </nav>
 
-      {/* ═══ HERO ═══ */}
-      <header style={{ position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${IMG.invest})`, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.08 }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(10,4,40,0.4) 0%, rgba(10,4,40,1) 90%)" }} />
-        <div style={{ position: "absolute", top: -150, right: -100, width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(200,169,110,0.06) 0%, transparent 70%)", pointerEvents: "none" }} />
+      {/* ═══ HERO ═══ (Třída "dark") */}
+      <header className="dark" style={{ position: "relative", overflow: "hidden", color: c.text, background: c.bg }}>
+        <div style={{ position: "absolute", inset: "0 0 100px 0", backgroundImage: `url(${IMG.invest})`, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.04, zIndex: 0 }} />
+        <div style={{ position: "absolute", inset: "0 0 100px 0", background: `linear-gradient(180deg, color-mix(in srgb, var(--background) 20%, transparent) 0%, var(--background) 100%)`, zIndex: 0 }} />
+        <div style={{ position: "absolute", top: -150, right: -100, width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, color-mix(in srgb, var(--chart-3) 8%, transparent) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
+        
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "130px 20px 110px", position: "relative", zIndex: 1 }}>
           <span style={S.label}>{t.hero.label}</span>
           <h1 style={{ fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 700, lineHeight: 1.08, maxWidth: 680, marginBottom: 10, marginTop: 12 }}>
             {t.hero.title1}<br />
-            <span style={{ background: `linear-gradient(135deg,${c.gold},${c.goldLight})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            <span style={{ color: c.gold }}>
               {t.hero.title2}
             </span>
           </h1>
-          <p style={{ fontSize: 14, color: c.faint, marginBottom: 24, letterSpacing: 0.5 }}>{t.hero.subtitle}</p>
-          <p style={{ fontSize: 17, color: "rgba(255,255,255,0.5)", maxWidth: 540, lineHeight: 1.75, marginBottom: 36 }}>
+          <p style={{ fontSize: 14, color: c.muted, marginBottom: 24, letterSpacing: 0.5 }}>{t.hero.subtitle}</p>
+          <p style={{ fontSize: 17, color: c.faint, maxWidth: 540, lineHeight: 1.75, marginBottom: 36 }}>
             {t.hero.description}
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
             <button onClick={() => window.open("https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/", "_blank")} style={S.cta}>{t.nav.invest} →</button>
-            <button onClick={() => window.open("https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/#funds-files-block_66a00e4ba6bdae49f7f97f19e0c54fe3", "_blank")} style={S.ghost}>{lang === "cs" ? "Odkaz na factsheet" : lang === "en" ? "Factsheet link" : "Link al factsheet"}</button>
+            <button onClick={() => window.open("https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/#funds-files-block_66a00e4ba6bdae49f7f97f19e0c54fe3", "_blank")} style={S.ghost}>{lang === "cs" ? "Poznat naše brandy" : lang === "en" ? "Factsheet link" : "Link al factsheet"}</button>
           </div>
-          {/* Hero KPIs */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: 16, marginTop: 70 }}>
+          
+          {/* Hero KPIs - Tyto chceme schválně světlé, takže je vyjmeme z .dark kontextu */}
+          <div className="light" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: 16, marginTop: 70 }}>
             {[
               { v: <Counter end={2.6} decimals={1} />, u: "mld CZK", l: t.hero.kpi1, a: false },
               { v: <span><Counter end={7.16} decimals={2} /></span>, u: "% p.a.", l: t.hero.kpi2, a: true },
-              { v: "3 / 7", u: "", l: t.hero.kpi3, a: false },
+              { v: "3 / 7", u: "", l: t.hero.kpi3, a: true },
               { v: <Counter end={36} />, u: "SPV", l: t.hero.kpi4, a: false },
             ].map((k, i) => (
-              <div key={i} style={S.kpi}>
-                <div style={{ fontSize: 30, fontWeight: 700, color: k.a ? c.gold : "white" }}>
+              <div key={i} style={{ ...S.kpi, background: "var(--card)", borderColor: "var(--border)", color: "var(--foreground)" }}>
+                <div style={{ fontSize: 30, fontWeight: 700, color: k.a ? c.gold : "inherit" }}>
                   {k.v}
-                  <span style={{ fontSize: 13, fontWeight: 500, color: c.muted, marginLeft: 5 }}>{k.u}</span>
+                  <span style={{ fontSize: 13, fontWeight: 500, color: "var(--muted-foreground)", marginLeft: 5 }}>{k.u}</span>
                 </div>
-                <div style={{ fontSize: 11, color: c.faint, marginTop: 4 }}>{k.l}</div>
+                <div style={{ fontSize: 11, color: "color-mix(in srgb, var(--foreground) 60%, transparent)", marginTop: 4 }}>{k.l}</div>
               </div>
             ))}
           </div>
@@ -528,7 +533,7 @@ export default function App() {
       </header>
 
       {/* ═══ TRACK RECORD STRIP ═══ */}
-      <section style={{ background: "rgba(255,255,255,0.02)", borderTop: `1px solid ${c.border}`, borderBottom: `1px solid ${c.border}` }}>
+      <section style={{ background: c.bg, borderTop: `1px solid ${c.border}`, borderBottom: `1px solid ${c.border}` }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "45px 20px" }}>
           <div style={{ textAlign: "center", marginBottom: 24 }}>
             <span style={S.label}>{t.trackRecord.label}</span>
@@ -542,13 +547,12 @@ export default function App() {
               { v: <Counter end={263} />, l: t.trackRecord.metric5, sub: t.trackRecord.metric5sub },
             ].map((k, i) => (
               <div key={i} style={S.kpi}>
-                <div style={{ fontSize: 28, fontWeight: 700, color: i === 0 || i === 2 ? c.gold : "white" }}>{k.v}</div>
+                <div style={{ fontSize: 28, fontWeight: 700, color: i === 0 || i === 2 ? c.gold : c.text }}>{k.v}</div>
                 <div style={{ fontSize: 11, color: c.muted, marginTop: 4, lineHeight: 1.4 }}>{k.l}</div>
                 <div style={{ fontSize: 10, color: c.faint, marginTop: 6, borderTop: `1px solid ${c.border}`, paddingTop: 6 }}>{k.sub}</div>
               </div>
             ))}
           </div>
-          {/* Extra metrics row */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 100px), 1fr))", gap: 8, marginTop: 20, textAlign: "center" }}>
             {[
               { v: "2,6+", u: "mld CZK", l: t.trackRecord.extra1 },
@@ -561,7 +565,7 @@ export default function App() {
               { v: "~30", u: "", l: t.trackRecord.extra8 },
             ].map((k, i) => (
               <div key={i} style={{ padding: "10px 4px" }}>
-                <div style={{ fontSize: 16, fontWeight: 700, color: i < 2 ? "white" : c.gold }}>
+                <div style={{ fontSize: 16, fontWeight: 700, color: i < 2 ? c.text : c.gold }}>
                   {k.v} <span style={{ fontSize: 10, color: c.faint }}>{k.u}</span>
                 </div>
                 <div style={{ fontSize: 9, color: c.faint, marginTop: 2 }}>{k.l}</div>
@@ -601,7 +605,7 @@ export default function App() {
             ].map(([k, v], i) => (
               <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "8px 0", borderBottom: `1px solid ${c.border}`, fontSize: 12.5 }}>
                 <span style={{ color: c.muted }}>{k}</span>
-                <span style={{ fontWeight: 600, textAlign: "right", maxWidth: "55%" }}>{v}</span>
+                <span style={{ fontWeight: 600, textAlign: "right", maxWidth: "55%", color: c.text }}>{v}</span>
               </div>
             ))}
           </div>
@@ -616,7 +620,7 @@ export default function App() {
                 {t.about.sriDesc}
               </p>
             </div>
-            <div style={{ ...S.kpi, background: "rgba(200,169,110,0.04)", borderColor: "rgba(200,169,110,0.15)" }}>
+            <div style={{ ...S.kpi, background: "color-mix(in srgb, var(--chart-3) 5%, transparent)", borderColor: "color-mix(in srgb, var(--chart-3) 20%, transparent)" }}>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 120px), 1fr))", gap: 12 }}>
                 {[
                   { v: "min. 7 %", l: t.about.guaranteeTitle1 },
@@ -633,7 +637,6 @@ export default function App() {
                 {t.about.guaranteeDesc}
               </p>
             </div>
-            {/* Governance box */}
             <div style={{ ...S.kpi, textAlign: "left", padding: "20px 24px" }}>
               <div style={{ fontSize: 10, color: c.faint, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
                 {t.about.governanceTitle}
@@ -647,7 +650,7 @@ export default function App() {
               ].map(([k, v], i) => (
                 <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "5px 0", borderBottom: i < 4 ? `1px solid ${c.border}` : "none", fontSize: 11.5 }}>
                   <span style={{ color: c.faint }}>{k}</span>
-                  <span style={{ fontWeight: 600, fontSize: 11 }}>{v}</span>
+                  <span style={{ fontWeight: 600, fontSize: 11, color: c.text }}>{v}</span>
                 </div>
               ))}
             </div>
@@ -656,24 +659,24 @@ export default function App() {
       </section>
 
       {/* ═══ STRATEGIE ═══ */}
-      <section id="strategie" style={{ background: "rgba(255,255,255,0.015)", borderTop: `1px solid ${c.border}`, padding: "0 20px" }}>
+      <section id="strategie" style={{ background: c.bg, borderTop: `1px solid ${c.border}`, padding: "0 20px" }}>
         <div style={S.section}>
           <span style={S.label}>{t.strategy.label}</span>
           <h2 style={S.h2}>{t.strategy.title}</h2>
           <p style={S.sub}>{t.strategy.subtitle}</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))", gap: 16 }}>
             {[
-              { icon: "🏗", name: t.strategy.pillar1name, stat: t.strategy.pillar1stat, stat2: t.strategy.pillar1stat2, color: c.gold, desc: t.strategy.pillar1desc },
-              { icon: "🏠", name: t.strategy.pillar2name, stat: t.strategy.pillar2stat, stat2: t.strategy.pillar2stat2, color: "#6B6BAA", desc: t.strategy.pillar2desc },
-              { icon: "⚡", name: t.strategy.pillar3name, stat: t.strategy.pillar3stat, stat2: t.strategy.pillar3stat2, color: "#40408A", desc: t.strategy.pillar3desc },
-              { icon: "🏬", name: t.strategy.pillar4name, stat: t.strategy.pillar4stat, stat2: t.strategy.pillar4stat2, color: "#8888BB", desc: t.strategy.pillar4desc },
+              { icon: "🏗", name: t.strategy.pillar1name, stat: t.strategy.pillar1stat, stat2: t.strategy.pillar1stat2, color: "var(--chart-3)", desc: t.strategy.pillar1desc },
+              { icon: "🏠", name: t.strategy.pillar2name, stat: t.strategy.pillar2stat, stat2: t.strategy.pillar2stat2, color: "var(--chart-2)", desc: t.strategy.pillar2desc },
+              { icon: "⚡", name: t.strategy.pillar3name, stat: t.strategy.pillar3stat, stat2: t.strategy.pillar3stat2, color: "var(--chart-1)", desc: t.strategy.pillar3desc },
+              { icon: "🏬", name: t.strategy.pillar4name, stat: t.strategy.pillar4stat, stat2: t.strategy.pillar4stat2, color: "var(--chart-4)", desc: t.strategy.pillar4desc },
             ].map((p, i) => (
               <div key={i} style={{ ...S.kpi, textAlign: "left", borderTop: `3px solid ${p.color}`, padding: "24px 22px" }}>
                 <div style={{ fontSize: 24, marginBottom: 10 }}>{p.icon}</div>
-                <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 6 }}>{p.name}</h3>
+                <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 6, color: c.text }}>{p.name}</h3>
                 <p style={{ fontSize: 11.5, color: c.faint, lineHeight: 1.6, marginBottom: 16, minHeight: 56 }}>{p.desc}</p>
-                <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: 8, padding: "12px 14px" }}>
-                  <div style={{ fontSize: 20, fontWeight: 700 }}>{p.stat}</div>
+                <div style={{ background: "color-mix(in srgb, var(--foreground) 3%, transparent)", borderRadius: 8, padding: "12px 14px" }}>
+                  <div style={{ fontSize: 20, fontWeight: 700, color: c.text }}>{p.stat}</div>
                   <div style={{ fontSize: 10, color: c.faint, marginTop: 2 }}>{p.stat2}</div>
                 </div>
               </div>
@@ -698,9 +701,9 @@ export default function App() {
                 fontSize: 12,
                 fontWeight: 600,
                 cursor: "pointer",
-                border: `1px solid ${tab === c2.key ? c.gold : "rgba(255,255,255,0.12)"}`,
-                background: tab === c2.key ? "rgba(200,169,110,0.12)" : "transparent",
-                color: tab === c2.key ? c.goldLight : c.muted,
+                border: `1px solid ${tab === c2.key ? c.gold : c.border}`,
+                background: tab === c2.key ? "color-mix(in srgb, var(--chart-3) 10%, transparent)" : "transparent",
+                color: tab === c2.key ? c.gold : c.muted,
                 transition: "all 0.2s",
                 whiteSpace: "nowrap"
               }}
@@ -723,26 +726,27 @@ export default function App() {
                   position: "absolute",
                   top: 10,
                   left: 10,
-                  background: p.status === "active" ? "rgba(200,169,110,0.9)" : p.status === "new" ? "rgba(64,64,138,0.9)" : "rgba(255,255,255,0.15)",
-                  color: p.status === "active" ? c.bg : "white",
+                  background: p.status === "active" ? c.gold : p.status === "new" ? "var(--primary)" : "var(--background)",
+                  color: p.status === "prep" ? "var(--foreground)" : "var(--background)",
                   padding: "3px 10px",
                   borderRadius: 20,
                   fontSize: 10,
                   fontWeight: 700,
                   textTransform: "uppercase",
-                  letterSpacing: 1
+                  letterSpacing: 1,
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
                 }}>
                   {p.status === "active" ? t.projects.statusActive : p.status === "new" ? t.projects.statusNew : t.projects.statusPrep}
                 </div>
               </div>
               <div style={{ padding: "18px 20px" }}>
                 <div style={{ fontSize: 11, color: c.faint, marginBottom: 4 }}>{p.loc}</div>
-                <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 6 }}>{p.name}</h3>
+                <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 6, color: c.text }}>{p.name}</h3>
                 <p style={{ fontSize: 11.5, color: c.muted, lineHeight: 1.5, marginBottom: 12, minHeight: 32 }}>{getProjectDesc(p.key, lang)}</p>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   {p.units && (
                     <div>
-                      <span style={{ fontSize: 18, fontWeight: 700 }}>{p.units}</span>
+                      <span style={{ fontSize: 18, fontWeight: 700, color: c.text }}>{p.units}</span>
                       <span style={{ fontSize: 11, color: c.faint, marginLeft: 4 }}>{t.projects.units}</span>
                     </div>
                   )}
@@ -755,7 +759,7 @@ export default function App() {
       </section>
 
       {/* ═══ VÝKONNOST ═══ */}
-      <section id="vykonnost" style={{ background: "rgba(255,255,255,0.015)", borderTop: `1px solid ${c.border}`, padding: "0 20px" }}>
+      <section id="vykonnost" style={{ background: c.bg, borderTop: `1px solid ${c.border}`, padding: "0 20px" }}>
         <div style={S.section}>
           <span style={S.label}>{t.performance.label}</span>
           <h2 style={S.h2}>{t.performance.title}</h2>
@@ -778,7 +782,7 @@ export default function App() {
                 <div style={{ fontSize: 10, color: c.faint, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>
                   Hodnota PIA k 31. 12. 2024
                 </div>
-                <div style={{ fontSize: 32, fontWeight: 700 }}>
+                <div style={{ fontSize: 32, fontWeight: 700, color: c.text }}>
                   1,9149 <span style={{ fontSize: 14, color: c.muted }}>CZK</span>
                 </div>
                 <div style={{ fontSize: 11, color: c.gold, marginTop: 4 }}>+7,00 % za rok 2024 (z 1,7896 CZK)</div>
@@ -806,11 +810,11 @@ export default function App() {
                 </div>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginTop: 4 }}>
                   <div>
-                    <div style={{ fontSize: 24, fontWeight: 700 }}>169%</div>
+                    <div style={{ fontSize: 24, fontWeight: 700, color: c.text }}>169%</div>
                     <div style={{ fontSize: 9, color: c.faint }}>hrubá hodnota aktiv</div>
                   </div>
                   <div>
-                    <div style={{ fontSize: 24, fontWeight: 700 }}>171%</div>
+                    <div style={{ fontSize: 24, fontWeight: 700, color: c.text }}>171%</div>
                     <div style={{ fontSize: 9, color: c.faint }}>závazková metoda</div>
                   </div>
                 </div>
@@ -836,7 +840,7 @@ export default function App() {
             ].map((v, i) => (
               <div key={i} style={{ ...S.kpi, textAlign: "left", padding: "22px 24px" }}>
                 <div style={{ fontSize: 22, marginBottom: 10 }}>{v.icon}</div>
-                <h3 style={{ fontSize: 14, fontWeight: 700, marginBottom: 6 }}>{v.t}</h3>
+                <h3 style={{ fontSize: 14, fontWeight: 700, marginBottom: 6, color: c.text }}>{v.t}</h3>
                 <p style={{ fontSize: 12, color: c.faint, lineHeight: 1.6 }}>{v.d}</p>
               </div>
             ))}
@@ -845,15 +849,14 @@ export default function App() {
       </section>
 
       {/* ═══ TÝM ═══ */}
-      <section id="tym" style={{ background: "rgba(255,255,255,0.015)", borderTop: `1px solid ${c.border}`, padding: "0 20px" }}>
+      <section id="tym" style={{ background: c.bg, borderTop: `1px solid ${c.border}`, padding: "0 20px" }}>
         <div style={S.section}>
           <span style={S.label}>{t.team.label}</span>
           <h2 style={S.h2}>{t.team.title}</h2>
           <p style={S.sub}>{lang === "cs" ? "Tým cca 30 profesionálů v oblastech developmentu, financí, marketingu a správy nemovitostí." : lang === "en" ? "Team of approximately 30 professionals in development, finance, marketing and property management." : "Team di circa 30 professionisti nello sviluppo, finanza, marketing e gestione immobiliare."}</p>
-          {/* Founders + CEO */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: 16, marginBottom: 20 }}>
             {team.slice(0, 3).map((m, i) => (
-              <div key={i} style={{ ...S.kpi, display: "flex", gap: 16, textAlign: "left", padding: "22px", borderColor: i === 2 ? "rgba(200,169,110,0.2)" : c.border }}>
+              <div key={i} style={{ ...S.kpi, display: "flex", gap: 16, textAlign: "left", padding: "22px", borderColor: i === 2 ? "color-mix(in srgb, var(--chart-3) 30%, transparent)" : c.border }}>
                 {m.img ? (
                   <img src={m.img} alt={m.name} style={{ width: 72, height: 72, borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: `2px solid ${c.border}` }} />
                 ) : (
@@ -862,7 +865,7 @@ export default function App() {
                     height: 72,
                     borderRadius: "50%",
                     flexShrink: 0,
-                    background: "linear-gradient(135deg, rgba(200,169,110,0.25), rgba(64,64,138,0.3))",
+                    background: `linear-gradient(135deg, color-mix(in srgb, var(--chart-3) 15%, transparent), color-mix(in srgb, var(--primary) 10%, transparent))`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -874,14 +877,13 @@ export default function App() {
                   </div>
                 )}
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 700 }}>{m.name}</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: c.text }}>{m.name}</div>
                   <div style={{ fontSize: 11, color: c.gold, fontWeight: 600, marginBottom: 6 }}>{m.role}</div>
                   <p style={{ fontSize: 11, color: c.faint, lineHeight: 1.5 }}>{m.desc}</p>
                 </div>
               </div>
             ))}
           </div>
-          {/* Management */}
           <div style={{ fontSize: 10, color: c.faint, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12, marginTop: 20 }}>
             {t.team.managementLabel}
           </div>
@@ -896,7 +898,7 @@ export default function App() {
                     height: 56,
                     borderRadius: "50%",
                     flexShrink: 0,
-                    background: "rgba(255,255,255,0.06)",
+                    background: "color-mix(in srgb, var(--foreground) 4%, transparent)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -908,7 +910,7 @@ export default function App() {
                   </div>
                 )}
                 <div>
-                  <div style={{ fontSize: 13, fontWeight: 700 }}>{m.name}</div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: c.text }}>{m.name}</div>
                   <div style={{ fontSize: 10, color: c.gold, fontWeight: 600, marginBottom: 4 }}>{m.role}</div>
                   <p style={{ fontSize: 10.5, color: c.faint, lineHeight: 1.4 }}>{m.desc}</p>
                 </div>
@@ -930,11 +932,11 @@ export default function App() {
               { s: t.steps.step3num, t: t.steps.step3title, d: t.steps.step3desc },
             ].map((s, i) => (
               <div key={i} style={{ position: "relative" }}>
-                <div style={{ fontSize: 72, fontWeight: 800, color: "rgba(200,169,110,0.06)", position: "absolute", top: -25, left: -8 }}>
+                <div style={{ fontSize: 72, fontWeight: 800, color: "color-mix(in srgb, var(--foreground) 3%, transparent)", position: "absolute", top: -25, left: -8 }}>
                   {s.s}
                 </div>
                 <div style={{ position: "relative", zIndex: 1, paddingTop: 44 }}>
-                  <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 10 }}>{s.t}</h3>
+                  <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 10, color: c.text }}>{s.t}</h3>
                   <p style={{ fontSize: 13, color: c.muted, lineHeight: 1.7 }}>{s.d}</p>
                 </div>
               </div>
@@ -943,8 +945,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* ═══ CTA ═══ */}
-      <section style={{ background: "linear-gradient(135deg, #12094A 0%, #0A0428 100%)", borderTop: "1px solid rgba(200,169,110,0.12)", padding: "0 20px" }}>
+      {/* ═══ CTA ═══ (Třída "dark") */}
+      <section className="dark" style={{ background: c.bg, borderTop: `1px solid ${c.border}`, padding: "0 20px", color: c.text }}>
         <div style={{ ...S.section, textAlign: "center", paddingTop: 80, paddingBottom: 80 }}>
           <span style={S.label}>{t.cta.label}</span>
           <h2 style={{ fontSize: 40, fontWeight: 700, marginTop: 12, marginBottom: 18, lineHeight: 1.15 }}>
@@ -975,8 +977,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* ═══ FOOTER ═══ */}
-      <footer id="kontakt" style={{ borderTop: `1px solid ${c.border}` }}>
+      {/* ═══ FOOTER ═══ (Třída "dark") */}
+      <footer id="kontakt" className="dark" style={{ background: c.bg, borderTop: `1px solid ${c.border}` }}>
         <div style={{ ...S.section, paddingBottom: 30, padding: "90px 20px 30px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: 40 }}>
             <div>
@@ -984,16 +986,16 @@ export default function App() {
                 <div style={{
                   width: 30,
                   height: 30,
-                  background: `linear-gradient(135deg,${c.gold},${c.goldLight})`,
+                  background: c.gold,
                   borderRadius: 6,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   fontWeight: 800,
-                  color: c.bg,
+                  color: "var(--background)",
                   fontSize: 13
                 }}>S</div>
-                <span style={{ fontSize: 15, fontWeight: 700, letterSpacing: 2 }}>SPILBERK</span>
+                <span style={{ fontSize: 15, fontWeight: 700, letterSpacing: 2, color: c.text }}>SPILBERK</span>
               </div>
               <p style={{ fontSize: 10.5, color: c.faint, lineHeight: 1.7, maxWidth: 300 }}>
                 {t.footer.disclaimer}
@@ -1042,7 +1044,7 @@ export default function App() {
           justifyContent: "space-between",
           gap: 12,
           fontSize: 9.5,
-          color: "rgba(255,255,255,0.2)"
+          color: "color-mix(in srgb, var(--foreground) 30%, transparent)"
         }}>
           <span>© 2016–2026 SPILBERK investiční fond SICAV, a.s. Všechna práva vyhrazena.</span>
           <span>KID na avantfunds.cz · Statut fondu · Výroční zpráva 2024 · www.spilberk.com · www.urbanblok.cz</span>
