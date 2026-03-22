@@ -79,7 +79,8 @@ function NAVChart({ label }: { label: string }) {
   const pts = data.map((d, i) => ({
     x: px + i / (data.length - 1) * cW,
     y: py + cH - d.v / max * cH,
-    ...d
+    year: d.y,
+    v: d.v
   }));
   const line = pts.map((p, i) => `${i === 0 ? "M" : "L"}${p.x},${p.y}`).join(" ");
   const area = `${line} L${pts[pts.length - 1].x},${h - py} L${pts[0].x},${h - py} Z`;
@@ -117,7 +118,7 @@ function NAVChart({ label }: { label: string }) {
       <path d={area} fill="url(#ng)" />
       <path d={line} fill="none" stroke="var(--chart-3)" strokeWidth="2.5" strokeLinejoin="round" />
       {pts.map(p => (
-        <g key={p.y}>
+        <g key={p.year}>
           <circle cx={p.x} cy={p.y} r="4" fill="var(--card)" stroke="var(--chart-3)" strokeWidth="2" />
           <text
             x={p.x}
@@ -127,7 +128,7 @@ function NAVChart({ label }: { label: string }) {
             fontSize="9"
             fontFamily="inherit"
           >
-            {p.y}
+            {p.year}
           </text>
           <text
             x={p.x}
