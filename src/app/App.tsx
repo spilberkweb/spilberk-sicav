@@ -274,6 +274,13 @@ export default function App() {
       <style>{`
         .desktop-menu { display: none !important; }
         .mobile-menu-btn { display: flex !important; }
+        @media (max-width: 899px) {
+          .main-nav {
+            background: color-mix(in srgb, var(--background) 96%, transparent) !important;
+            backdrop-filter: blur(24px) !important;
+            border-bottom: 1px solid var(--border) !important;
+          }
+        }
         @media (min-width: 900px) {
           .desktop-menu { display: flex !important; }
           .mobile-menu-btn { display: none !important; }
@@ -281,7 +288,7 @@ export default function App() {
         }
       `}</style>
 
-      <nav className="dark" style={{
+      <nav className="dark main-nav" style={{
         position: "fixed",
         top: 0,
         left: 0,
@@ -293,9 +300,9 @@ export default function App() {
         justifyContent: "space-between",
         alignItems: "center",
         gap: 16,
-        background: scrollY > 60 ? "color-mix(in srgb, var(--background) 96%, transparent)" : "transparent",
-        backdropFilter: scrollY > 60 ? "blur(24px)" : "none",
-        borderBottom: scrollY > 60 ? `1px solid ${c.border}` : "none",
+        background: scrollY > 60 || menuOpen ? "color-mix(in srgb, var(--background) 96%, transparent)" : "transparent",
+        backdropFilter: scrollY > 60 || menuOpen ? "blur(24px)" : "none",
+        borderBottom: scrollY > 60 || menuOpen ? `1px solid ${c.border}` : "none",
         transition: "all 0.35s"
       }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
@@ -485,12 +492,12 @@ export default function App() {
         </div>
       </nav>
 
-      <header className="dark" style={{ position: "relative", overflow: "hidden", color: c.text, background: c.bg, minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+      <header className="dark" style={{ position: "relative", overflow: "hidden", color: c.text, background: c.bg, minHeight: "100vh" }}>
         <div style={{ position: "absolute", inset: "0 0 0px 0", backgroundImage: `url(${IMG.invest})`, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.10, zIndex: 0 }} />
         <div style={{ position: "absolute", inset: "0 0 0px 0", background: `linear-gradient(180deg, color-mix(in srgb, var(--background) 20%, transparent) 0%, var(--background) 100%)`, zIndex: 0 }} />
         <div style={{ position: "absolute", top: -150, right: -100, width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, color-mix(in srgb, var(--chart-3) 8%, transparent) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
-        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 20px", width: "100%", position: "relative", zIndex: 1 }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "100px 20px 40px", width: "100%", position: "relative", zIndex: 1, minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <span style={S.label}>{t.hero.label}</span>
           <h1 style={{ fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 700, lineHeight: 1.08, maxWidth: 680, marginBottom: 10, marginTop: 12 }}>
             {t.hero.title1}<br />
