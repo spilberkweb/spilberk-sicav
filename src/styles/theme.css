@@ -3,8 +3,8 @@
 :root {
   --font-size: 16px;
   
-  --background: #f8fafc; 
-  --foreground: #020617; /* Ztmaveno pro ostřejší kontrast */
+  --background: #f8fafc;
+  --foreground: #020617;
   
   --card: #ffffff;
   --card-foreground: #020617;
@@ -14,18 +14,17 @@
   --primary: #1e3a8a; 
   --primary-foreground: #f8fafc;
   
-  /* Šedé a doplňkové modré tóny */
   --secondary: #f1f5f9;
   --secondary-foreground: #1e3a8a;
   --muted: #f1f5f9;
-  --muted-foreground: #475569; /* Ztmaveno pro lepší čitelnost podružných textů (např. v tabulce) */
+  --muted-foreground: #475569;
   --accent: #e2e8f0;
   --accent-foreground: #1e3a8a;
   
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   
-  --border: #cbd5e1; /* Ztmaveno pro lepší ohraničení karet */
+  --border: #cbd5e1;
   --input: transparent;
   --input-background: #ffffff;
   --switch-background: #94a3b8;
@@ -36,7 +35,7 @@
   
   --chart-1: #3b82f6; 
   --chart-2: #475569; 
-  --chart-3: #b0891d; /* Tmavší, zemitější zlatá pro perfektní čitelnost na bílé */
+  --chart-3: #b0891d;
   --chart-4: #64748b;
   --chart-5: #1e40af;
   
@@ -77,7 +76,7 @@
   
   --chart-1: #60a5fa;
   --chart-2: #94a3b8;
-  --chart-3: #fbbf24; /* Zůstává zářivá zlatá pro tmavé pozadí (hlavička/patička) */
+  --chart-3: #fbbf24;
   --chart-4: #818cf8;
   --chart-5: #2563eb;
   

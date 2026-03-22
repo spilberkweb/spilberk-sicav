@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { translations, type Language } from "./translations";
 import { getProjectDesc, getTeamData } from "./projectData";
 
-/* ─── Animated Counter ─── */
 function Counter({ end, suffix = "", prefix = "", decimals = 0, duration = 2000 }: { 
   end: number; 
   suffix?: string; 
@@ -40,7 +39,6 @@ function Counter({ end, suffix = "", prefix = "", decimals = 0, duration = 2000 
   );
 }
 
-/* ─── SRI Gauge ─── */
 function SRIGauge() {
   return (
     <div style={{ display: "flex", gap: 3, alignItems: "center" }}>
@@ -68,7 +66,6 @@ function SRIGauge() {
   );
 }
 
-/* ─── NAV Area Chart ─── */
 function NAVChart({ label }: { label: string }) {
   const data = [
     { y: "2019", v: 620 },
@@ -176,7 +173,6 @@ function PerfBar({ year, val }: { year: string; val: number }) {
   );
 }
 
-/* ─── Sanity CDN images ─── */
 const CDN = "https://cdn.sanity.io/images/by9osh4f/production";
 const IMG = {
   v24: `${CDN}/798ca72b1c8a3026f61ef19bad8e693c29fbed93-2080x1387.jpg?w=600&h=400&fit=crop`,
@@ -199,7 +195,6 @@ const IMG = {
   dominika: `${CDN}/075cf3e8abce5e6eece0c25174c329d9e8caaa72-2048x1535.jpg?rect=582,137,1022,1022&w=200&h=200&fit=crop`,
 };
 
-/* ─── Main ─── */
 export default function App() {
   const [tab, setTab] = useState("all");
   const [scrollY, setScrollY] = useState(0);
@@ -248,7 +243,6 @@ export default function App() {
     { ...teamData[6], img: null },
   ];
 
-  // Objekt nyní plně napojený na CSS proměnné z theme.css
   const c = {
     gold: "var(--chart-3)",
     bg: "var(--background)",
@@ -283,7 +277,7 @@ export default function App() {
         }
       `}</style>
 
-      {/* ═══ NAV ═══ (Přidána třída "dark" pro vynucení tmavého vzhledu z theme.css) */}
+      {}
       <nav className="dark" style={{
         position: "fixed",
         top: 0,
@@ -401,7 +395,7 @@ export default function App() {
           <button onClick={() => window.open("https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/", "_blank")} style={{ ...S.cta, padding: "9px 22px", fontSize: 12.5, whiteSpace: "nowrap" }}>{t.nav.invest}</button>
         </div>
 
-        {/* ═══ MOBILE DROPDOWN ═══ */}
+        {}
         <div 
           className="mobile-menu-dropdown"
           style={{
@@ -489,7 +483,7 @@ export default function App() {
         </div>
       </nav>
 
-      {/* ═══ HERO ═══ (Třída "dark") */}
+      {}
       <header className="dark" style={{ position: "relative", overflow: "hidden", color: c.text, background: c.bg }}>
         <div style={{ position: "absolute", inset: "0 0 100px 0", backgroundImage: `url(${IMG.invest})`, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.04, zIndex: 0 }} />
         <div style={{ position: "absolute", inset: "0 0 100px 0", background: `linear-gradient(180deg, color-mix(in srgb, var(--background) 20%, transparent) 0%, var(--background) 100%)`, zIndex: 0 }} />
@@ -532,7 +526,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* ═══ TRACK RECORD STRIP ═══ */}
+      {}
       <section style={{ background: c.bg, borderTop: `1px solid ${c.border}`, borderBottom: `1px solid ${c.border}` }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "45px 20px" }}>
           <div style={{ textAlign: "center", marginBottom: 24 }}>
@@ -575,7 +569,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ═══ O FONDU ═══ */}
+      {}
       <section id="o-fondu" style={{ ...S.section, padding: "90px 20px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 400px), 1fr))", gap: 50 }}>
           <div>
@@ -658,7 +652,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ═══ STRATEGIE ═══ */}
+      {}
       <section id="strategie" style={{ background: c.bg, borderTop: `1px solid ${c.border}`, padding: "0 20px" }}>
         <div style={S.section}>
           <span style={S.label}>{t.strategy.label}</span>
@@ -685,7 +679,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ═══ PROJEKTY ═══ */}
+      {}
       <section id="projekty" style={{ ...S.section, padding: "90px 20px" }}>
         <span style={S.label}>{t.projects.label}</span>
         <h2 style={S.h2}>{t.projects.title}</h2>
@@ -758,7 +752,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ═══ VÝKONNOST ═══ */}
+      {}
       <section id="vykonnost" style={{ background: c.bg, borderTop: `1px solid ${c.border}`, padding: "0 20px" }}>
         <div style={S.section}>
           <span style={S.label}>{t.performance.label}</span>
@@ -824,7 +818,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ═══ PROČ INVESTOVAT ═══ */}
+      {}
       <section style={{ borderTop: `1px solid ${c.border}`, padding: "0 20px" }}>
         <div style={S.section}>
           <span style={S.label}>{t.benefits.label}</span>
@@ -848,7 +842,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ═══ TÝM ═══ */}
+      {}
       <section id="tym" style={{ background: c.bg, borderTop: `1px solid ${c.border}`, padding: "0 20px" }}>
         <div style={S.section}>
           <span style={S.label}>{t.team.label}</span>
@@ -920,7 +914,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ═══ JAK INVESTOVAT ═══ */}
+      {}
       <section style={{ borderTop: `1px solid ${c.border}`, padding: "0 20px" }}>
         <div style={S.section}>
           <span style={S.label}>{t.steps.label}</span>
@@ -945,7 +939,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ═══ CTA ═══ (Třída "dark") */}
+      {}
       <section className="dark" style={{ background: c.bg, borderTop: `1px solid ${c.border}`, padding: "0 20px", color: c.text }}>
         <div style={{ ...S.section, textAlign: "center", paddingTop: 80, paddingBottom: 80 }}>
           <span style={S.label}>{t.cta.label}</span>
@@ -977,7 +971,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ═══ FOOTER ═══ (Třída "dark") */}
+      {}
       <footer id="kontakt" className="dark" style={{ background: c.bg, borderTop: `1px solid ${c.border}` }}>
         <div style={{ ...S.section, paddingBottom: 30, padding: "90px 20px 30px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: 40 }}>
