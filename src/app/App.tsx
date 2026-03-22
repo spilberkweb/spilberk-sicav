@@ -272,13 +272,26 @@ export default function App() {
   return (
     <div style={{ fontFamily: "'DM Sans','Segoe UI',sans-serif", background: c.bg, color: c.text, minHeight: "100vh", overflowX: "hidden" }}>
       <style>{`
+        .main-nav, .main-footer {
+          background: var(--nav-bg) !important;
+          backdrop-filter: none !important;
+          --foreground: var(--nav-text);
+          --border: color-mix(in srgb, var(--nav-text) 15%, transparent);
+          --background: var(--nav-bg);
+          color: var(--nav-text); /* Ensure direct text inherits correctly */
+        }
+        .main-nav {
+          border-bottom: 1px solid color-mix(in srgb, var(--nav-text) 15%, transparent) !important;
+        }
+        .main-footer {
+          border-top: 1px solid color-mix(in srgb, var(--nav-text) 15%, transparent) !important;
+        }
         .desktop-menu { display: none !important; }
         .mobile-menu-btn { display: flex !important; }
         @media (max-width: 899px) {
-          .main-nav {
-            background: color-mix(in srgb, var(--background) 96%, transparent) !important;
-            backdrop-filter: blur(24px) !important;
-            border-bottom: 1px solid var(--border) !important;
+          .mobile-menu-dropdown {
+            background: var(--nav-bg) !important;
+            backdrop-filter: none !important;
           }
         }
         @media (min-width: 900px) {
@@ -969,7 +982,7 @@ export default function App() {
         </div>
       </section>
 
-      <footer id="kontakt" className="dark" style={{ background: c.bg, borderTop: `1px solid ${c.border}` }}>
+      <footer id="kontakt" className="dark main-footer" style={{ background: c.bg, borderTop: `1px solid ${c.border}` }}>
         <div style={{ ...S.section, paddingBottom: 30, padding: "90px 20px 30px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: 40 }}>
             <div>
