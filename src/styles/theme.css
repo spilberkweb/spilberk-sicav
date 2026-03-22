@@ -2,92 +2,137 @@
 
 :root {
   --font-size: 16px;
-  
-  --background: #f8fafc;
-  --foreground: #020617;
-  
-  --card: #ffffff;
-  --card-foreground: #020617;
-  --popover: #ffffff;
-  --popover-foreground: #020617;
-  
-  --primary: #1e3a8a; 
-  --primary-foreground: #f8fafc;
-  
-  --secondary: #f1f5f9;
-  --secondary-foreground: #1e3a8a;
-  --muted: #f1f5f9;
-  --muted-foreground: #475569;
-  --accent: #e2e8f0;
-  --accent-foreground: #1e3a8a;
-  
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  
-  --border: #cbd5e1;
+
+  --gold-primary: #b0891d;
+  --gold-darker: #b0891d;
+
+  --hero-bg: #dfeaf1;
+  --hero-text: #0c1e33;
+
+  --hero-card: #f6fbff;
+  --hero-border: #99afc5;
+  --hero-muted: #b4c9d9;
+
+  --page-bg: #f8fafc;
+  --page-text: #020617;
+  --page-card: #ffffff;
+  --page-border: #cbd5e1;
+  --page-muted: #f1f5f9;
+  --page-muted-text: #475569;
+  --page-primary: #1e3a8a;
+  --page-primary-foreground: #ffffff;
+
+  --page-destructive: #ef4444;
+  --page-destructive-foreground: #ffffff;
+
+  /* --- GRAFY A DATA --- */
+  --data-1: #3b82f6;
+  --data-2: #475569;
+  --data-4: #64748b;
+  --data-5: #1e40af;
+
+  /* Data specifická pro Hero sekci */
+  --hero-data-1: #1e3a8a;
+  --hero-data-2: #3b82f6;
+  --hero-data-4: #475569;
+  --hero-data-5: #0c1e33;
+
+  /* --- ZÁKLADNÍ MAPOVÁNÍ (Světlý režim / Tělo) --- */
+  --background: var(--page-bg);
+  --foreground: var(--page-text);
+
+  --card: var(--page-card);
+  --card-foreground: var(--page-text);
+  --popover: var(--page-card);
+  --popover-foreground: var(--page-text);
+
+  --primary: var(--page-primary);
+  --primary-foreground: var(--page-primary-foreground);
+
+  --secondary: var(--page-muted);
+  --secondary-foreground: var(--page-primary);
+  --muted: var(--page-muted);
+  --muted-foreground: var(--page-muted-text);
+  --accent: var(--page-border);
+  --accent-foreground: var(--page-primary);
+
+  --destructive: var(--page-destructive);
+  --destructive-foreground: var(--page-destructive-foreground);
+
+  --border: var(--page-border);
   --input: transparent;
-  --input-background: #ffffff;
-  --switch-background: #94a3b8;
-  
+  --input-background: var(--page-card);
+  --switch-background: var(--hero-border);
+
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #1e3a8a;
-  
-  --chart-1: #3b82f6; 
-  --chart-2: #475569; 
-  --chart-3: #b0891d;
-  --chart-4: #64748b;
-  --chart-5: #1e40af;
-  
+  --ring: var(--page-primary);
+
+  --chart-1: var(--data-1);
+  --chart-2: var(--data-2);
+  --chart-3: var(--gold-darker);
+  --chart-4: var(--data-4);
+  --chart-5: var(--data-5);
+
   --radius: 0.5rem;
-  
-  --sidebar: #ffffff;
-  --sidebar-foreground: #020617;
-  --sidebar-primary: #1e3a8a;
-  --sidebar-primary-foreground: #f8fafc;
-  --sidebar-accent: #f1f5f9;
-  --sidebar-accent-foreground: #1e3a8a;
-  --sidebar-border: #cbd5e1;
-  --sidebar-ring: #1e3a8a;
+
+  --sidebar: var(--page-card);
+  --sidebar-foreground: var(--page-text);
+  --sidebar-primary: var(--page-primary);
+  --sidebar-primary-foreground: var(--page-primary-foreground);
+  --sidebar-accent: var(--page-muted);
+  --sidebar-accent-foreground: var(--page-primary);
+  --sidebar-border: var(--page-border);
+  --sidebar-ring: var(--page-primary);
 }
 
 .dark {
-  --background: #020617;
-  --foreground: #f8fafc;
-  
-  --card: #0f172a;
-  --card-foreground: #f8fafc;
-  --popover: #0f172a;
-  --popover-foreground: #f8fafc;
-  
-  --primary: #3b82f6; 
-  --primary-foreground: #020617;
-  
-  --secondary: #1e293b;
-  --secondary-foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #1e293b;
-  --accent-foreground: #f8fafc;
-  
-  --border: #1e293b;
-  --input: #1e293b;
-  --ring: #3b82f6;
-  
-  --chart-1: #60a5fa;
-  --chart-2: #94a3b8;
-  --chart-3: #fbbf24;
-  --chart-4: #818cf8;
-  --chart-5: #2563eb;
-  
-  --sidebar: #020617;
-  --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #3b82f6;
-  --sidebar-primary-foreground: #020617;
-  --sidebar-accent: #1e293b;
-  --sidebar-accent-foreground: #f8fafc;
-  --sidebar-border: #1e293b;
-  --sidebar-ring: #3b82f6;
+  --background: var(--hero-bg);
+  --foreground: var(--hero-text);
+
+  --card: var(--hero-card);
+  --card-foreground: var(--hero-text);
+  --popover: var(--hero-card);
+  --popover-foreground: var(--hero-text);
+
+  --primary: var(--page-primary);
+  --primary-foreground: var(--page-primary-foreground);
+
+  --secondary: var(--hero-border);
+  --secondary-foreground: var(--hero-text);
+  --muted: var(--hero-muted);
+  --muted-foreground: var(--hero-text);
+  --accent: var(--hero-muted);
+  --accent-foreground: var(--hero-text);
+
+  --border: var(--hero-border);
+  --input: var(--hero-muted);
+  --ring: var(--gold-primary);
+
+  --chart-1: var(--hero-data-1);
+  --chart-2: var(--hero-data-2);
+  --chart-3: var(--gold-primary);
+  --chart-4: var(--hero-data-4);
+  --chart-5: var(--hero-data-5);
+
+  --sidebar: var(--hero-bg);
+  --sidebar-foreground: var(--hero-text);
+  --sidebar-primary: var(--page-primary);
+  --sidebar-primary-foreground: var(--page-primary-foreground);
+  --sidebar-accent: var(--hero-muted);
+  --sidebar-accent-foreground: var(--hero-text);
+  --sidebar-border: var(--hero-border);
+  --sidebar-ring: var(--gold-primary);
+}
+
+.light {
+  --background: var(--page-bg);
+  --foreground: var(--page-text);
+  --card: var(--page-card);
+  --card-foreground: var(--page-text);
+  --border: var(--page-border);
+  --muted: var(--page-muted);
+  --muted-foreground: var(--page-muted-text);
 }
 
 @theme inline {
