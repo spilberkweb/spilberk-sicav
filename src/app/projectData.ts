@@ -48,14 +48,14 @@ export const getProjectDesc = (projectKey: string, lang: Language): string => {
       it: "1.000 m² GLA, 100% occupazione — Super zoo, TETA, Pepco"
     },
     ski: {
-      cs: "5 apartmánových domů, wellness, restaurant, 95 park. stání",
-      en: "5 apartment buildings, wellness, restaurant, 95 parking spaces",
-      it: "5 edifici con appartamenti, wellness, ristorante, 95 posti auto"
+      cs: "Apartmánové domy s rekreačním zázemím, ve fázi přípravy",
+      en: "Apartment buildings with recreational facilities, in preparation phase",
+      it: "Edifici con appartamenti e strutture ricreative, in fase di preparazione"
     },
     chodov: {
-      cs: "4 objekty, ubytovací a rezidenční areál, občanská vybavenost",
-      en: "4 buildings, accommodation and residential complex, civic amenities",
-      it: "4 edifici, complesso residenziale e ricettivo, servizi civici"
+      cs: "Ubytovací a rezidenční areál, aktuálně ve fázi přípravy",
+      en: "Accommodation and residential complex, currently in preparation phase",
+      it: "Complesso residenziale e ricettivo, attualmente in fase di preparazione"
     }
   };
 

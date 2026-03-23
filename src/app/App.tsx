@@ -222,8 +222,8 @@ export default function App() {
     { key: "vysk", name: "Retail Park Vyškov", loc: "Vyškov, ČR", units: null, cat: "retail", status: "active", img: IMG.vysk },
     { key: "lans", name: "Retail Park Lanškroun", loc: "Lanškroun, ČR", units: null, cat: "retail", status: "active", img: IMG.lans },
     { key: "kyjov", name: "Retail Park Kyjov", loc: "Kyjov, ČR", units: null, cat: "retail", status: "active", img: IMG.kyjov },
-    { key: "ski", name: "Ski Apartments Klínovec", loc: "Klínovec, ČR", units: 84, cat: "prep", status: "prep", img: IMG.ski },
-    { key: "chodov", name: "Rezidenční projekt Chodov", loc: "Praha – Chodov", units: null, cat: "prep", status: "prep", img: IMG.chodov },
+    { key: "ski", name: "Projekt Klínovec", loc: "Klínovec", units: null, cat: "prep", status: "prep", img: IMG.ski },
+    { key: "chodov", name: "Projekt Praha", loc: "Praha", units: null, cat: "prep", status: "prep", img: IMG.chodov },
   ];
 
   const cats = [
@@ -731,7 +731,15 @@ export default function App() {
                 if (p.link) window.open(`https://${p.link}`, '_blank', 'noopener,noreferrer');
               }}
             >
-              <div style={{ height: 180, backgroundImage: `url(${p.img})`, backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
+              <div style={{ height: 180, position: "relative", overflow: "hidden" }}>
+                <div style={{
+                  position: "absolute",
+                  inset: (p.key === "ski" || p.key === "chodov") ? -10 : 0,
+                  backgroundImage: `url(${p.img})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  filter: (p.key === "ski" || p.key === "chodov") ? "blur(8px)" : "none",
+                }} />
                 <div style={{
                   position: "absolute",
                   top: 10,
@@ -744,7 +752,8 @@ export default function App() {
                   fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: 1,
-                  boxShadow: "0 2px 8px color-mix(in srgb, var(--foreground) 10%, transparent)"
+                  boxShadow: "0 2px 8px color-mix(in srgb, var(--foreground) 10%, transparent)",
+                  zIndex: 2
                 }}>
                   {p.status === "active" ? t.projects.statusActive : p.status === "new" ? t.projects.statusNew : t.projects.statusPrep}
                 </div>
