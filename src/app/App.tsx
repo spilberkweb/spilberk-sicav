@@ -1010,7 +1010,7 @@ export default function App() {
                 }}>S</div>
                 <span style={{ fontSize: 15, fontWeight: 700, letterSpacing: 2, color: c.text }}>SPILBERK</span>
               </div>
-              <p style={{ fontSize: 10.5, color: c.faint, lineHeight: 1.7, maxWidth: 300 }}>
+              <p style={{ fontSize: 13, color: c.faint, lineHeight: 1.7, maxWidth: 500 }}>
                 {t.footer.disclaimer}
               </p>
             </div>
@@ -1060,7 +1060,17 @@ export default function App() {
           color: "color-mix(in srgb, var(--foreground) 30%, transparent)"
         }}>
           <span>© 2016–2026 SPILBERK investiční fond SICAV, a.s. Všechna práva vyhrazena.</span>
-          <span>KID na avantfunds.cz · Statut fondu · Výroční zpráva 2024 · www.spilberk.com · www.urbanblok.cz</span>
+          <span style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <a href="https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/#funds-files-block_66a00e4ba6bdae49f7f97f19e0c54fe3" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>KID na avantfunds.cz</a>
+            <span>·</span>
+            <a href="https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/#funds-files-block_66a00e4ba6bdae49f7f97f19e0c54fe3" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>Statut fondu</a>
+            <span>·</span>
+            <a href="https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/#funds-files-block_66a00e4ba6bdae49f7f97f19e0c54fe3" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>Výroční zpráva 2024</a>
+            <span>·</span>
+            <a href="https://www.spilberk.com" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>www.spilberk.com</a>
+            <span>·</span>
+            <a href="https://www.urbanblok.cz" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>www.urbanblok.cz</a>
+          </span>
         </div>
       </footer>
     </div>
