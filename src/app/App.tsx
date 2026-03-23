@@ -163,7 +163,7 @@ function NAVChart({ label }: { label: string }) {
 function PerfBar({ year, val }: { year: string; val: number }) {
   return (
     <div style={{ textAlign: "center" }}>
-      <div style={{ fontSize: 11, color: "var(--muted-foreground)", marginBottom: 6 }}>{year}</div>
+      <div style={{ fontSize: 16, fontWeight: 700, color: "var(--chart-3)", marginBottom: 6 }}>{val}%</div>
       <div style={{ height: 100, display: "flex", alignItems: "flex-end", justifyContent: "center", marginBottom: 6 }}>
         <div style={{
           width: 36,
@@ -172,7 +172,7 @@ function PerfBar({ year, val }: { year: string; val: number }) {
           borderRadius: "4px 4px 0 0"
         }} />
       </div>
-      <div style={{ fontSize: 16, fontWeight: 700, color: "var(--chart-3)" }}>{val}%</div>
+      <div style={{ fontSize: 11, color: "var(--muted-foreground)" }}>{year}</div>
     </div>
   );
 }
@@ -217,7 +217,7 @@ export default function App() {
     { key: "b45", name: "Urbanblok B45", loc: "Bratislavská, Brno", units: 162, cat: "rental", status: "active", img: IMG.b45, link: "b45.urbanblok.cz" },
     { key: "cejl", name: "Nový Cejl", loc: "Cejl 79, Brno", units: 101, cat: "rental", status: "active", img: IMG.cejl, link: "novy-cejl.cz" },
     { key: "b47", name: "Bratislavská 47", loc: "Bratislavská, Brno", units: 330, cat: "development", status: "new", img: IMG.b47 },
-    { key: "kladno", name: "Kladno - Na Sestem", loc: "Kladno, ČR", units: 488, cat: "development", status: "prep", img: IMG.kladno },
+    { key: "kladno", name: "Kladno - Na Šestém", loc: "Kladno, ČR", units: 488, cat: "development", status: "prep", img: IMG.kladno },
     { key: "platany", name: "Pod Platany", loc: "Židenice, Brno", units: 110, cat: "development", status: "prep", img: IMG.platany },
     { key: "vysk", name: "Retail Park Vyškov", loc: "Vyškov, ČR", units: null, cat: "retail", status: "active", img: IMG.vysk },
     { key: "lans", name: "Retail Park Lanškroun", loc: "Lanškroun, ČR", units: null, cat: "retail", status: "active", img: IMG.lans },
@@ -331,8 +331,10 @@ export default function App() {
             color: c.bg,
             fontSize: 15
           }}>S</div>
-          <span style={{ fontSize: 16, fontWeight: 700, letterSpacing: 2.5, color: c.text }}>SPILBERK</span>
-          <span style={{ fontSize: 9, color: c.faint, letterSpacing: 1.5, marginLeft: 4 }}>FUND</span>
+          <div style={{ display: "flex", alignItems: "baseline", flexWrap: "wrap" }}>
+            <span style={{ fontSize: 16, fontWeight: 700, letterSpacing: 2.5, color: c.text }}>SPILBERK</span>
+            <span style={{ fontSize: 9, color: c.faint, letterSpacing: 1.5, marginLeft: 6 }}>investiční fond SICAV</span>
+          </div>
         </div>
 
         <button
@@ -557,7 +559,7 @@ export default function App() {
               { v: <span><Counter end={15} />+</span>, l: t.trackRecord.metric2, sub: t.trackRecord.metric2sub },
               { v: "1 354", l: t.trackRecord.metric3, sub: t.trackRecord.metric3sub },
               { v: "60 000", l: t.trackRecord.metric4, sub: t.trackRecord.metric4sub },
-              { v: <Counter end={263} />, l: t.trackRecord.metric5, sub: t.trackRecord.metric5sub },
+              { v: <span><Counter end={300} />+</span>, l: t.trackRecord.metric5, sub: t.trackRecord.metric5sub },
             ].map((k, i) => (
               <div key={i} style={S.kpi}>
                 <div style={{ fontSize: 28, fontWeight: 700, color: i === 0 || i === 2 ? c.gold : c.text }}>{k.v}</div>
@@ -782,8 +784,8 @@ export default function App() {
           <span style={S.label}>{t.performance.label}</span>
           <h2 style={S.h2}>{t.performance.title}</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 400px), 1fr))", gap: 40 }}>
-            <div style={{ ...S.kpi, padding: "30px" }}>
-              <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12 }}>
+            <div style={{ ...S.kpi, padding: "30px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, min-content)", gap: "24px 30px", justifyContent: "center" }}>
                 {[
                   { y: "2019", v: 7.0 },
                   { y: "2020", v: 7.0 },
@@ -793,7 +795,7 @@ export default function App() {
                   { y: "2024", v: 7.0 }
                 ].map(d => <PerfBar key={d.y} year={d.y} val={d.v} />)}
               </div>
-              <div style={{ textAlign: "center", fontSize: 10, color: c.faint, marginTop: 14 }}>{t.performance.annualReturns}</div>
+              <div style={{ textAlign: "center", fontSize: 10, color: c.faint, marginTop: 24 }}>{t.performance.annualReturns}</div>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={S.kpi}>
@@ -1008,7 +1010,10 @@ export default function App() {
                   color: "var(--background)",
                   fontSize: 13
                 }}>S</div>
-                <span style={{ fontSize: 15, fontWeight: 700, letterSpacing: 2, color: c.text }}>SPILBERK</span>
+                <div style={{ display: "flex", alignItems: "baseline", flexWrap: "wrap" }}>
+                  <span style={{ fontSize: 15, fontWeight: 700, letterSpacing: 2, color: c.text }}>SPILBERK</span>
+                  <span style={{ fontSize: 9, color: c.faint, letterSpacing: 1.5, marginLeft: 6 }}>investiční fond SICAV</span>
+                </div>
               </div>
               <p style={{ fontSize: 13, color: c.faint, lineHeight: 1.7, maxWidth: 500 }}>
                 {t.footer.disclaimer}
@@ -1044,6 +1049,18 @@ export default function App() {
               {["AVANT investiční společnost", "ČSOB (depozitář)", "ČNB (regulátor)", "AUDIT ONE (auditor)", "BDO Czech Republic (daně)"].map(t => (
                 <div key={t} style={{ fontSize: 11, color: c.faint, marginBottom: 5 }}>{t}</div>
               ))}
+            </div>
+          </div>
+          <div style={{ marginTop: 60, paddingTop: 30, borderTop: `1px solid ${c.border}`, textAlign: "center" }}>
+            <div style={{
+              fontSize: 11,
+              color: c.faint,
+              lineHeight: 1.6,
+              maxWidth: 1000,
+              margin: "0 auto",
+              whiteSpace: "pre-wrap"
+            }}>
+              {t.footer.extendedLegal}
             </div>
           </div>
         </div>

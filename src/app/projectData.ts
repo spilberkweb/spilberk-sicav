@@ -65,31 +65,31 @@ export const getProjectDesc = (projectKey: string, lang: Language): string => {
 export const getTeamData = (lang: Language) => {
   const teamData = {
     cs: [
-      { name: "Ing. Martin Pěnčík", role: "Zakladatel & Člen DR", desc: "Spoluzakladatel fondu, 50 % zakladatelských akcií. Operační řízení, development a stavebnictví. Zodpovědnost za projektový rozvoj." },
-      { name: "Mgr. Robert Sedláček", role: "Zakladatel & Předseda DR", desc: "Spoluzakladatel fondu, 50 % zakladatelských akcií. Advokát — právo nemovitostí, korporátní právo, právní architektura struktury." },
-      { name: "Ing. Jan Hevessy", role: "CEO", desc: "15+ let v řízení investic a transformaci firem. Wharton School, Columbia Business School. Governance a profesionalizace fondových struktur." },
-      { name: "Ing. Matěj Schánilec, ACCA", role: "CFO", desc: "Finanční řízení fondu, reporting a compliance. Držitel kvalifikace ACCA. Strategické plánování kapitálu." },
+      { name: "Martin Pěnčík", role: "Zakladatel & Člen DR", desc: "Spoluzakladatel fondu, 50 % zakladatelských akcií. Operační řízení, development a stavebnictví. Zodpovědnost za projektový rozvoj." },
+      { name: "Robert Sedláček", role: "Zakladatel & Předseda DR", desc: "Spoluzakladatel fondu, 50 % zakladatelských akcií. Advokát — právo nemovitostí, korporátní právo, právní architektura struktury." },
+      { name: "Jan Hevessy", role: "CEO", desc: "15+ let v řízení investic a transformaci firem. Wharton School, Columbia Business School. Governance a profesionalizace fondových struktur." },
+      { name: "Matěj Schánilec", role: "CFO", desc: "Finanční řízení fondu, reporting a compliance. Držitel kvalifikace ACCA. Strategické plánování kapitálu." },
       { name: "Šárka Tomanová", role: "HR & Office Manager", desc: "Řízení lidských zdrojů, kancelářský provoz a podpora interních procesů fondu." },
       { name: "Dominika Dočkalová", role: "Property Manager", desc: "Řízení divize správy nemovitostí. Správa domu, SVJ, koordinace pronájmů a facility management." },
-      { name: "Martin Šimek", role: "Vedoucí retail segmentu", desc: "Správa a rozvoj portfolia komerčních nemovitostí a retail parků. Koordinace s partnery FUERTES." },
+      { name: "Martin Šimek", role: "Vedoucí retail segmentu", desc: "Správa a rozvoj portfolia komerčních nemovitostí a retail parků." },
     ],
     en: [
-      { name: "Ing. Martin Pěnčík", role: "Founder & Board Member", desc: "Co-founder of the fund, 50% founder shares. Operations management, development and construction. Responsible for project development." },
-      { name: "Mgr. Robert Sedláček", role: "Founder & Board Chairman", desc: "Co-founder of the fund, 50% founder shares. Attorney — real estate law, corporate law, legal structure architecture." },
-      { name: "Ing. Jan Hevessy", role: "CEO", desc: "15+ years in investment management and corporate transformation. Wharton School, Columbia Business School. Governance and professionalization of fund structures." },
-      { name: "Ing. Matěj Schánilec, ACCA", role: "CFO", desc: "Financial management of the fund, reporting and compliance. ACCA certified. Strategic capital planning." },
+      { name: "Martin Pěnčík", role: "Founder & Board Member", desc: "Co-founder of the fund, 50% founder shares. Operations management, development and construction. Responsible for project development." },
+      { name: "Robert Sedláček", role: "Founder & Board Chairman", desc: "Co-founder of the fund, 50% founder shares. Attorney — real estate law, corporate law, legal structure architecture." },
+      { name: "Jan Hevessy", role: "CEO", desc: "15+ years in investment management and corporate transformation. Wharton School, Columbia Business School. Governance and professionalization of fund structures." },
+      { name: "Matěj Schánilec", role: "CFO", desc: "Financial management of the fund, reporting and compliance. ACCA certified. Strategic capital planning." },
       { name: "Šárka Tomanová", role: "HR & Office Manager", desc: "Human resources management, office operations and support of internal fund processes." },
       { name: "Dominika Dočkalová", role: "Property Manager", desc: "Management of property management division. Building administration, HOA, rental coordination and facility management." },
-      { name: "Martin Šimek", role: "Retail Segment Head", desc: "Management and development of commercial real estate and retail parks portfolio. Coordination with FUERTES partners." },
+      { name: "Martin Šimek", role: "Retail Segment Head", desc: "Management and development of commercial real estate and retail parks portfolio." },
     ],
     it: [
-      { name: "Ing. Martin Pěnčík", role: "Fondatore & Membro CDA", desc: "Co-fondatore del fondo, 50% azioni fondatrici. Gestione operativa, sviluppo e costruzioni. Responsabile dello sviluppo progetti." },
-      { name: "Mgr. Robert Sedláček", role: "Fondatore & Presidente CDA", desc: "Co-fondatore del fondo, 50% azioni fondatrici. Avvocato — diritto immobiliare, diritto societario, architettura legale della struttura." },
-      { name: "Ing. Jan Hevessy", role: "CEO", desc: "15+ anni nella gestione degli investimenti e trasformazione aziendale. Wharton School, Columbia Business School. Governance e professionalizzazione delle strutture di fondi." },
-      { name: "Ing. Matěj Schánilec, ACCA", role: "CFO", desc: "Gestione finanziaria del fondo, reporting e compliance. Certificato ACCA. Pianificazione strategica del capitale." },
+      { name: "Martin Pěnčík", role: "Fondatore & Membro CDA", desc: "Co-fondatore del fondo, 50% azioni fondatrici. Gestione operativa, sviluppo e costruzioni. Responsabile dello sviluppo progetti." },
+      { name: "Robert Sedláček", role: "Fondatore & Presidente CDA", desc: "Co-fondatore del fondo, 50% azioni fondatrici. Avvocato — diritto immobiliare, diritto societario, architettura legale della struttura." },
+      { name: "Jan Hevessy", role: "CEO", desc: "15+ anni nella gestione degli investimenti e trasformazione aziendale. Wharton School, Columbia Business School. Governance e professionalizzazione delle strutture di fondi." },
+      { name: "Matěj Schánilec", role: "CFO", desc: "Gestione finanziaria del fondo, reporting e compliance. Certificato ACCA. Pianificazione strategica del capitale." },
       { name: "Šárka Tomanová", role: "HR & Office Manager", desc: "Gestione risorse umane, operazioni d'ufficio e supporto ai processi interni del fondo." },
       { name: "Dominika Dočkalová", role: "Property Manager", desc: "Gestione della divisione di amministrazione immobiliare. Amministrazione edifici, condominio, coordinamento affitti e facility management." },
-      { name: "Martin Šimek", role: "Responsabile Segmento Retail", desc: "Gestione e sviluppo del portafoglio immobiliare commerciale e parchi retail. Coordinamento con partner FUERTES." },
+      { name: "Martin Šimek", role: "Responsabile Segmento Retail", desc: "Gestione e sviluppo del portafoglio immobiliare commerciale e parchi retail." },
     ]
   };
 

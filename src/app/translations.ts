@@ -9,7 +9,8 @@ export const translations = {
       performance: "Výkonnost",
       team: "Tým",
       contact: "Kontakt",
-      invest: "Investujte s námi"
+      invest: "Investujte s námi",
+      documents: "Dokumenty"
     },
     hero: {
       label: "fund.spilberk.com · SPILBERK investiční fond SICAV, a.s.",
@@ -33,7 +34,7 @@ export const translations = {
       metric3: "bytů v pipeline",
       metric3sub: "15 projektů běží + příprava",
       metric4: "m² plánované ČPP",
-      metric4sub: "Brno · Praha · Kladno · Klínovec",
+      metric4sub: "Brno · Praha · Kladno na Šestém · Klínovec",
       metric5: "nájemních jednotek Urbanblok",
       metric5sub: "60 % nájemníků — expaté, studenti",
       extra1: "majetek fondu",
@@ -103,7 +104,7 @@ export const translations = {
       pillar1stat2: "15+ dokončených projektů",
       pillar1desc: "Malometrážní byty v atraktivních městských lokalitách. 1 354 bytů v pipeline, 60 000 m² plánované ČPP.",
       pillar2name: "Nájemní bydlení",
-      pillar2stat: "263 jednotek",
+      pillar2stat: "300+ jednotek",
       pillar2stat2: "2 Urbanblok projekty",
       pillar2desc: "Urbanblok B45 + V24. 60 % nájemníků expaté a studenti z 9+ zemí. Nájmy nad tržním průměrem.",
       pillar3name: "Energetika",
@@ -198,7 +199,8 @@ export const translations = {
       disclaimer: "SPILBERK investiční fond SICAV, a.s. je fondem kvalifikovaných investorů dle zákona č. 240/2013 Sb. (ZISIF). Údaje o výkonnosti se týkají minulosti. Výkonnost v minulosti není spolehlivým ukazatelem budoucích výsledků. KID na avantfunds.cz.",
       fundLabel: "Fond",
       contactLabel: "Kontakt",
-      legalLabel: "Právní informace"
+      legalLabel: "Právní informace",
+      extendedLegal: "SPILBERK investiční fond SICAV, a.s. je fondem kvalifikovaných investorů dle zákona č. 240/2013 Sb. o investičních společnostech a investičních fondech, jeho akcionářem se může stát výhradně kvalifikovaný investor dle § 272 tohoto zákona.\n\nAVANT investiční společnost, a.s. je správcem fondů kvalifikovaných investorů dle zákona 240/2013 Sb. a jejich akcionářem nebo podílníkem se může stát kvalifikovaný investor dle paragrafu 272 tohoto zákona.\n\nSdělení klíčových informací fondu (KID) je k dispozici na https://www.avantfunds.cz/cz/informacni-povinnost/. V listinné podobě lze uvedené informace získat v sídle společnosti AVANT investiční společnost, a.s., City Tower, Hvězdova 1716/2b, 140 00 Praha 4 - Nusle. Další důležité informace pro investory na: https://www.avantfunds.cz/cz/dulezite-informace/."
     }
   },
   en: {
@@ -209,7 +211,8 @@ export const translations = {
       performance: "Performance",
       team: "Team",
       contact: "Contact",
-      invest: "Invest with us"
+      invest: "Invest with us",
+      documents: "Documents"
     },
     hero: {
       label: "fund.spilberk.com · SPILBERK Investment Fund SICAV, a.s.",
@@ -233,7 +236,7 @@ export const translations = {
       metric3: "apartments in pipeline",
       metric3sub: "15 projects running + preparation",
       metric4: "m² planned CPP",
-      metric4sub: "Brno · Prague · Kladno · Klínovec",
+      metric4sub: "Brno · Prague · Kladno na Šestém · Klínovec",
       metric5: "Urbanblok rental units",
       metric5sub: "60% tenants — expats, students",
       extra1: "fund assets",
@@ -303,7 +306,7 @@ export const translations = {
       pillar1stat2: "15+ completed projects",
       pillar1desc: "Small apartments in attractive urban locations. 1,354 apartments in pipeline, 60,000 m² planned CPP.",
       pillar2name: "Rental Housing",
-      pillar2stat: "263 units",
+      pillar2stat: "300+ units",
       pillar2stat2: "2 Urbanblok projects",
       pillar2desc: "Urbanblok B45 + V24. 60% tenants are expats and students from 9+ countries. Rents above market average.",
       pillar3name: "Energy",
@@ -398,7 +401,8 @@ export const translations = {
       disclaimer: "SPILBERK Investment Fund SICAV, a.s. is a qualified investor fund according to Act No. 240/2013 Coll. (ZISIF). Performance data relate to the past. Past performance is not a reliable indicator of future results. KID at avantfunds.cz.",
       fundLabel: "Fund",
       contactLabel: "Contact",
-      legalLabel: "Legal Information"
+      legalLabel: "Legal Information",
+      extendedLegal: "SPILBERK investment fund SICAV, a.s. is a fund of qualified investors according to Act No. 240/2013 Coll. on investment companies and investment funds, only a qualified investor according to Section 272 of this Act can become its shareholder.\n\nAVANT investment company, a.s. is the manager of funds of qualified investors according to Act 240/2013 Coll. and only a qualified investor according to Section 272 of this Act can become its shareholder or partner.\n\nKey Information Document (KID) is available at https://www.avantfunds.cz/en/information-obligation/. In paper form, the information can be obtained at the registered office of AVANT investment company, a.s., City Tower, Hvězdova 1716/2b, 140 00 Prague 4 - Nusle. Other important information for investors at: https://www.avantfunds.cz/en/important-information/."
     }
   },
   it: {
@@ -409,7 +413,8 @@ export const translations = {
       performance: "Performance",
       team: "Team",
       contact: "Contatto",
-      invest: "Investi con noi"
+      invest: "Investi con noi",
+      documents: "Documenti"
     },
     hero: {
       label: "fund.spilberk.com · SPILBERK Fondo di Investimento SICAV, a.s.",
@@ -433,7 +438,7 @@ export const translations = {
       metric3: "appartamenti in pipeline",
       metric3sub: "15 progetti in corso + preparazione",
       metric4: "m² CPP pianificato",
-      metric4sub: "Brno · Praga · Kladno · Klínovec",
+      metric4sub: "Brno · Praga · Kladno na Šestém · Klínovec",
       metric5: "unità in affitto Urbanblok",
       metric5sub: "60% inquilini — expat, studenti",
       extra1: "patrimonio del fondo",
@@ -503,7 +508,7 @@ export const translations = {
       pillar1stat2: "15+ progetti completati",
       pillar1desc: "Piccoli appartamenti in località urbane attraenti. 1.354 appartamenti in pipeline, 60.000 m² CPP pianificato.",
       pillar2name: "Alloggi in Affitto",
-      pillar2stat: "263 unità",
+      pillar2stat: "300+ unità",
       pillar2stat2: "2 progetti Urbanblok",
       pillar2desc: "Urbanblok B45 + V24. 60% inquilini sono expat e studenti da 9+ paesi. Affitti sopra la media di mercato.",
       pillar3name: "Energia",
@@ -598,7 +603,8 @@ export const translations = {
       disclaimer: "SPILBERK Fondo di Investimento SICAV, a.s. è un fondo per investitori qualificati secondo la Legge n. 240/2013 Racc. (ZISIF). I dati sulla performance si riferiscono al passato. La performance passata non è un indicatore affidabile dei risultati futuri. KID su avantfunds.cz.",
       fundLabel: "Fondo",
       contactLabel: "Contatto",
-      legalLabel: "Informazioni Legali"
+      legalLabel: "Informazioni Legali",
+      extendedLegal: "SPILBERK Fondo di Investimento SICAV, a.s. è un fondo per investitori qualificati ai sensi della legge n. 240/2013 Racc. sulle società di investimento e i fondi di investimento; solo un investitore qualificato ai sensi della Sezione 272 di tale legge può diventarne azionista.\n\nAVANT società di investimento, a.s. è il gestore di fondi per investitori qualificati ai sensi della legge 240/2013 Racc. e solo un investitore qualificato ai sensi della Sezione 272 di tale legge può diventarne azionista o socio.\n\nIl Documento Informativo Chiave (KID) è disponibile su https://www.avantfunds.cz/en/information-obligation/. In formato cartaceo, le informazioni possono essere ottenute presso la sede legale di AVANT società di investimento, a.s., City Tower, Hvězdova 1716/2b, 140 00 Praga 4 - Nusle. Altre informazioni importanti per gli investitori su: https://www.avantfunds.cz/en/important-information/."
     }
   }
 };
