@@ -161,18 +161,39 @@ function NAVChart({ label }: { label: string }) {
 }
 
 function PerfBar({ year, val }: { year: string; val: number }) {
+  const heightPercent = Math.max(5, (val - 6) / 2 * 100);
   return (
-    <div style={{ textAlign: "center" }}>
-      <div style={{ fontSize: 16, fontWeight: 700, color: "var(--chart-3)", marginBottom: 6 }}>{val}%</div>
-      <div style={{ height: 100, display: "flex", alignItems: "flex-end", justifyContent: "center", marginBottom: 6 }}>
-        <div style={{
-          width: 36,
-          height: `${(val - 6) / 2 * 100}%`,
-          background: "var(--chart-3)",
-          borderRadius: "4px 4px 0 0"
-        }} />
+    <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", flex: 1, minWidth: 0 }}>
+      <div style={{ fontSize: 13, fontWeight: 800, color: "var(--chart-3)", marginBottom: 12 }}>
+        <Counter end={val} decimals={2} suffix="%" />
       </div>
-      <div style={{ fontSize: 11, color: "var(--muted-foreground)" }}>{year}</div>
+      <div style={{
+        height: 120,
+        width: "100%",
+        maxWidth: 40,
+        background: "color-mix(in srgb, var(--chart-3) 8%, transparent)",
+        borderRadius: "6px",
+        display: "flex",
+        alignItems: "flex-end",
+        justifyContent: "center",
+        marginBottom: 12,
+        position: "relative",
+        boxShadow: "inset 0 1px 4px color-mix(in srgb, var(--foreground) 5%, transparent)"
+      }}>
+        <div style={{
+          width: "100%",
+          height: `${heightPercent}%`,
+          background: "linear-gradient(180deg, var(--chart-3) 0%, color-mix(in srgb, var(--chart-3) 80%, black) 100%)",
+          borderRadius: "4px 4px 2px 2px",
+          transition: "height 1.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
+          boxShadow: "0 4px 12px color-mix(in srgb, var(--chart-3) 30%, transparent)",
+          position: "relative",
+          zIndex: 1
+        }}>
+          <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "20%", background: "linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 100%)", borderRadius: "4px 4px 0 0" }} />
+        </div>
+      </div>
+      <div style={{ fontSize: 11, fontWeight: 600, color: "var(--muted-foreground)", letterSpacing: "0.5px" }}>{year}</div>
     </div>
   );
 }
@@ -368,12 +389,16 @@ export default function App() {
             { label: t.nav.projects, href: "#projekty" },
             { label: t.nav.performance, href: "#vykonnost" },
             { label: t.nav.team, href: "#tym" },
-            { label: t.nav.contact, href: "#kontakt" }
+            { label: t.nav.contact, href: "#kontakt" },
+            { label: t.nav.documents, href: "https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/#funds-files-block_66a00e4ba6bdae49f7f97f19e0c54fe3", external: true }
           ].map(item => (
             <a
               key={item.label}
               href={item.href}
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noopener noreferrer" : undefined}
               onClick={(e) => {
+                if (item.external) return;
                 e.preventDefault();
                 const element = document.querySelector(item.href);
                 if (element) {
@@ -451,12 +476,19 @@ export default function App() {
               { label: t.nav.projects, href: "#projekty" },
               { label: t.nav.performance, href: "#vykonnost" },
               { label: t.nav.team, href: "#tym" },
-              { label: t.nav.contact, href: "#kontakt" }
+              { label: t.nav.contact, href: "#kontakt" },
+              { label: t.nav.documents, href: "https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/#funds-files-block_66a00e4ba6bdae49f7f97f19e0c54fe3", external: true }
             ].map(item => (
               <a
                 key={item.label}
                 href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
                 onClick={(e) => {
+                  if (item.external) {
+                    setMenuOpen(false);
+                    return;
+                  }
                   e.preventDefault();
                   setMenuOpen(false);
                   const element = document.querySelector(item.href);
@@ -526,7 +558,7 @@ export default function App() {
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
             <button onClick={() => window.open("https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/", "_blank")} style={S.cta}>{t.nav.invest} →</button>
-            <button onClick={() => window.open("https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/#funds-files-block_66a00e4ba6bdae49f7f97f19e0c54fe3", "_blank")} style={S.ghost}>{t.hero.ctaSecondary}</button>
+            <button onClick={() => window.open("https://spilberk.com", "_blank")} style={S.ghost}>{t.hero.ctaSecondary}</button>
           </div>
 
           <div className="dark" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: 16, marginTop: 70 }}>
@@ -784,8 +816,17 @@ export default function App() {
           <span style={S.label}>{t.performance.label}</span>
           <h2 style={S.h2}>{t.performance.title}</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 400px), 1fr))", gap: 40 }}>
-            <div style={{ ...S.kpi, padding: "30px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, min-content)", gap: "24px 30px", justifyContent: "center" }}>
+            <div style={{ ...S.kpi, padding: "40px 30px 40px 45px", display: "flex", flexDirection: "column", justifyContent: "center", position: "relative", overflow: "hidden" }}>
+              <div style={{ display: "flex", gap: 8, justifyContent: "space-between", alignItems: "flex-end", position: "relative", zIndex: 1, minHeight: 180 }}>
+                {/* Horizontal grid lines for context */}
+                <div style={{ position: "absolute", inset: "33px 0 31px 0", display: "flex", flexDirection: "column", justifyContent: "space-between", pointerEvents: "none", opacity: 0.35 }}>
+                  {[8, 7, 6].map(v => (
+                    <div key={v} style={{ borderTop: `1px dashed ${c.border}`, width: "100%", position: "relative" }}>
+                      <span style={{ position: "absolute", left: -32, top: -7, fontSize: 10, color: c.faint, fontWeight: 700 }}>{v}%</span>
+                    </div>
+                  ))}
+                </div>
+                
                 {[
                   { y: "2019", v: 7.0 },
                   { y: "2020", v: 7.0 },
@@ -795,7 +836,9 @@ export default function App() {
                   { y: "2024", v: 7.0 }
                 ].map(d => <PerfBar key={d.y} year={d.y} val={d.v} />)}
               </div>
-              <div style={{ textAlign: "center", fontSize: 10, color: c.faint, marginTop: 24 }}>{t.performance.annualReturns}</div>
+              <div style={{ textAlign: "center", fontSize: 11, fontWeight: 600, color: c.faint, marginTop: 32, textTransform: "uppercase", letterSpacing: "1px" }}>
+                {t.performance.annualReturns}
+              </div>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={S.kpi}>
