@@ -13,8 +13,8 @@ export const translations = {
     },
     hero: {
       label: "fund.spilberk.com · SPILBERK investiční fond SICAV, a.s.",
-      title1: "Stavíme nemovitosti,",
-      title2: "s prioritním výnosem.",
+      title1: "Stavíme nemovitosti",
+      title2: "s prioritním výnosem",
       subtitle: "Základní kámen Vašeho portfolia",
       description: "Konzervativní nemovitostní fond s 9+ lety na trhu. Cílený výnos min. 7 % p.a., SRI 3/7, likvidita do 3 měsíců. Čtyři pilíře diverzifikace, 36 SPV entit pod správou.",
       cta: "Investujte s námi",

@@ -524,7 +524,7 @@ export default function App() {
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
             <button onClick={() => window.open("https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/", "_blank")} style={S.cta}>{t.nav.invest} →</button>
-            <button onClick={() => window.open("https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/#funds-files-block_66a00e4ba6bdae49f7f97f19e0c54fe3", "_blank")} style={S.ghost}>{lang === "cs" ? "Poznat naše brandy" : lang === "en" ? "Factsheet link" : "Link al factsheet"}</button>
+            <button onClick={() => window.open("https://www.avantfunds.cz/fondy/spilberk-investicni-fond-sicav-a-s/#funds-files-block_66a00e4ba6bdae49f7f97f19e0c54fe3", "_blank")} style={S.ghost}>{t.hero.ctaSecondary}</button>
           </div>
 
           <div className="dark" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: 16, marginTop: 70 }}>
