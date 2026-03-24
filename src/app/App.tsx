@@ -1066,7 +1066,7 @@ export default function App() {
               <div style={{ fontSize: 10, fontWeight: 700, color: c.faint, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 14 }}>
                 {t.footer.fundLabel}
               </div>
-              {["fund.spilberk.com", "ISIN: CZ0008042645", lang === "cs" ? "IČO: 051 94 148" : "ID: 051 94 148", "LEI: 315700AKR2M5RKLX8220", lang === "cs" ? "Založen: 26. 6. 2016" : lang === "en" ? "Founded: June 26, 2016" : "Fondato: 26 giugno 2016"].map(item => (
+              {["spilberkfund.com", "ISIN: CZ0008042645", lang === "cs" ? "IČO: 051 94 148" : "ID: 051 94 148", "LEI: 315700AKR2M5RKLX8220", lang === "cs" ? "Založen: 26. 6. 2016" : lang === "en" ? "Founded: June 26, 2016" : "Fondato: 26 giugno 2016"].map(item => (
                 <div key={item} style={{ fontSize: 11, color: c.faint, marginBottom: 5 }}>{item}</div>
               ))}
             </div>

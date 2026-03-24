@@ -13,7 +13,7 @@ export const translations = {
       documents: "Dokumenty"
     },
     hero: {
-      label: "fund.spilberk.com · SPILBERK investiční fond SICAV, a.s.",
+      label: "spilberkfund.com · SPILBERK investiční fond SICAV, a.s.",
       title1: "Stavíme nemovitosti",
       title2: "s prioritním výnosem",
       subtitle: "Základní kámen Vašeho portfolia",
@@ -215,7 +215,7 @@ export const translations = {
       documents: "Documents"
     },
     hero: {
-      label: "fund.spilberk.com · SPILBERK Investment Fund SICAV, a.s.",
+      label: "spilberkfund.com · SPILBERK Investment Fund SICAV, a.s.",
       title1: "Building properties,",
       title2: "priority returns.",
       subtitle: "The cornerstone of your portfolio",
@@ -417,7 +417,7 @@ export const translations = {
       documents: "Documenti"
     },
     hero: {
-      label: "fund.spilberk.com · SPILBERK Fondo di Investimento SICAV, a.s.",
+      label: "spilberkfund.com · SPILBERK Fondo di Investimento SICAV, a.s.",
       title1: "Costruire proprietà,",
       title2: "rendimento prioritario.",
       subtitle: "La pietra angolare del tuo portafoglio",

@@ -160,7 +160,7 @@ export default function SpilberkFund() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(10,4,40,0.4) 0%, rgba(10,4,40,1) 90%)" }} />
         <div style={{ position: "absolute", top: -150, right: -100, width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(200,169,110,0.06) 0%, transparent 70%)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "130px 36px 110px", position: "relative", zIndex: 1 }}>
-          <span style={S.label}>fund.spilberk.com · SPILBERK investiční fond SICAV, a.s.</span>
+          <span style={S.label}>spilberkfund.com · SPILBERK investiční fond SICAV, a.s.</span>
           <h1 style={{ fontSize: 52, fontWeight: 700, lineHeight: 1.08, maxWidth: 680, marginBottom: 10, marginTop: 12 }}>
             Stavíme nemovitosti,<br /><span style={{ background: `linear-gradient(135deg,${c.gold},${c.goldLight})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>garantujeme výnos.</span>
           </h1>
@@ -514,7 +514,7 @@ export default function SpilberkFund() {
             </div>
             <div>
               <div style={{ fontSize: 10, fontWeight: 700, color: c.faint, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 14 }}>Fond</div>
-              {["fund.spilberk.com", "ISIN: CZ0008042645", "IČO: 051 94 148", "LEI: 315700AKR2M5RKLX8220", "Založen: 26. 6. 2016"].map(t => <div key={t} style={{ fontSize: 11, color: c.faint, marginBottom: 5 }}>{t}</div>)}
+              {["spilberkfund.com", "ISIN: CZ0008042645", "IČO: 051 94 148", "LEI: 315700AKR2M5RKLX8220", "Založen: 26. 6. 2016"].map(t => <div key={t} style={{ fontSize: 11, color: c.faint, marginBottom: 5 }}>{t}</div>)}
             </div>
             <div>
               <div style={{ fontSize: 10, fontWeight: 700, color: c.faint, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 14 }}>Kontakt</div>
