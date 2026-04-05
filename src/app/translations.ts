@@ -1,4 +1,4 @@
-export type Language = 'cs' | 'en' | 'it';
+export type Language = "cs" | "en" | "it";
 
 export const translations = {
   cs: {
@@ -10,23 +10,25 @@ export const translations = {
       team: "Tým",
       contact: "Kontakt",
       invest: "Investujte s námi",
-      documents: "Dokumenty"
+      documents: "Dokumenty",
     },
     hero: {
       label: "spilberkfund.com · SPILBERK investiční fond SICAV, a.s.",
       title1: "Stavíme nemovitosti",
       title2: "s prioritním výnosem",
       subtitle: "Základní kámen Vašeho portfolia",
-      description: "Konzervativní nemovitostní fond s 9+ lety na trhu. Cílený výnos min. 7 % p.a., SRI 3/7, likvidita do 3 měsíců. Čtyři pilíře diverzifikace, 36 SPV entit pod správou.",
+      description:
+        "Konzervativní nemovitostní fond s 9+ lety na trhu. Cílený výnos min. 7 % p.a., SRI 3/7, likvidita do 3 měsíců. Čtyři pilíře diverzifikace, 36 SPV entit pod správou.",
       cta: "Investujte s námi",
       ctaSecondary: "O skupině",
       kpi1: "Majetek fondu pod správou",
       kpi2: "Výnos PIA za posledních 12M",
       kpi3: "Souhrnný ukazatel rizik (SRI)",
-      kpi4: "Entit ve struktuře fondu"
+      kpi4: "Entit ve struktuře fondu",
     },
     trackRecord: {
       label: "Track record, kterému můžete důvěřovat",
+      date: "Aktuální k dubnu 2026",
       metric1: "postavených bytových jednotek",
       metric1sub: "20 000+ m2 CPP",
       metric2: "dokončených projektů",
@@ -44,12 +46,13 @@ export const translations = {
       extra5: "VIA : PIA zajištění",
       extra6: "splatnost odkupů",
       extra7: "FVE Žatec",
-      extra8: "profesionálů v týmu"
+      extra8: "profesionálů v týmu",
     },
     about: {
       label: "O fondu",
       title: "Fond v číslech",
-      subtitle: "Strategií fondu je v souladu se statutem nabývání různorodých aktiv (nemovitosti, nemovitostní společnosti, cenné papíry, pohledávky, zápůjčky a úvěry) s cílem vytvořit odolné a výnosné portfolio.",
+      subtitle:
+        "Strategií fondu je v souladu se statutem nabývání různorodých aktiv (nemovitosti, nemovitostní společnosti, cenné papíry, pohledávky, zápůjčky a úvěry) s cílem vytvořit odolné a výnosné portfolio.",
       row1key: "Majetek fondu pod správou",
       row2key: "Fondový kapitál (NAV)",
       row3key: "Čistý zisk 2024",
@@ -78,11 +81,13 @@ export const translations = {
       row17val: "15 % do 3 let / 0 % po 3 letech",
       chartLabel: "Fondový kapitál (NAV) v mld CZK",
       sriTitle: "Souhrnný ukazatel rizik (SRI)",
-      sriDesc: "Fond zařazen do třídy 3 ze 7 — třetí nejnižší třída rizik. Nízká volatilita podkladových aktiv i celého portfolia. Ukazatel předpokládá držbu 4 roky.",
+      sriDesc:
+        "Fond zařazen do třídy 3 ze 7 — třetí nejnižší třída rizik. Nízká volatilita podkladových aktiv i celého portfolia. Ukazatel předpokládá držbu 4 roky.",
       guaranteeTitle1: "Cílený prioritní\nvýnos p.a.",
       guaranteeTitle2: "Výkonnost PIA\nza posledních 12M",
       guaranteeTitle3: "Maximální\nvýnos PIA p.a.",
-      guaranteeDesc: "Mechanismy prioritního zhodnocení PIA se uplatní i v případě nižšího zisku či ztráty fondu — redistribuce fondového kapitálu od VIA ve prospěch PIA. Údaje k 31. 12. 2024.",
+      guaranteeDesc:
+        "Mechanismy prioritního zhodnocení PIA se uplatní i v případě nižšího zisku či ztráty fondu — redistribuce fondového kapitálu od VIA ve prospěch PIA. Údaje k 31. 12. 2024.",
       governanceTitle: "Struktura a governance",
       gov1key: "Obhospodařovatel",
       gov1val: "AVANT investiční společnost, a.s.",
@@ -93,33 +98,39 @@ export const translations = {
       gov4key: "Auditor",
       gov4val: "AUDIT ONE s.r.o.",
       gov5key: "Účetní a daňový poradce",
-      gov5val: "BDO Czech Republic s.r.o."
+      gov5val: "BDO Czech Republic s.r.o.",
     },
     strategy: {
       label: "Investiční strategie",
       title: "Čtyři pilíře diverzifikace",
-      subtitle: "Synergie čtyř investičních oblastí zvyšuje výkonnost a dlouhodobou stabilitu celého fondu.",
+      subtitle:
+        "Synergie čtyř investičních oblastí zvyšuje výkonnost a dlouhodobou stabilitu celého fondu.",
       pillar1name: "Development",
       pillar1stat: "725+ jednotek",
       pillar1stat2: "15+ dokončených projektů",
-      pillar1desc: "Malometrážní byty v atraktivních městských lokalitách. 1 354 bytů v pipeline, 60 000 m² plánované ČPP.",
+      pillar1desc:
+        "Malometrážní byty v atraktivních městských lokalitách. 1 354 bytů v pipeline, 60 000 m² plánované ČPP.",
       pillar2name: "Nájemní bydlení",
       pillar2stat: "300+ jednotek",
       pillar2stat2: "2 Urbanblok projekty",
-      pillar2desc: "Urbanblok B45 + V24. 60 % nájemníků expaté a studenti z 9+ zemí. Nájmy nad tržním průměrem.",
+      pillar2desc:
+        "Urbanblok B45 + V24. 60 % nájemníků expaté a studenti z 9+ zemí. Nájmy nad tržním průměrem.",
       pillar3name: "Energetika",
       pillar3stat: "124 MWp",
       pillar3stat2: "FVE Žatec, 3 etapy",
-      pillar3desc: "Jedna z největších FVE v ČR. FVE na střechách vlastních budov, LDS, tepelná čerpadla.",
+      pillar3desc:
+        "Jedna z největších FVE v ČR. FVE na střechách vlastních budov, LDS, tepelná čerpadla.",
       pillar4name: "Retail Parky",
       pillar4stat: "3 → 8 parků",
       pillar4stat2: "Cíl do roku 2027",
-      pillar4desc: "100% obsazenost všech 3 aktivních parků. Partnerství FUERTES. Menší města, regionální centra."
+      pillar4desc:
+        "100% obsazenost všech 3 aktivních parků. Partnerství FUERTES. Menší města, regionální centra.",
     },
     projects: {
       label: "Portfolio projektů",
       title: "Naše projekty",
-      subtitle: "Strategická přítomnost v klíčových regionech ČR: Brno · Praha · Kladno · Klínovec · Mikulov",
+      subtitle:
+        "Strategická přítomnost v klíčových regionech ČR: Brno · Praha · Kladno · Klínovec · Mikulov",
       all: "Vše",
       rental: "Nájemní bydlení",
       development: "Development",
@@ -129,12 +140,15 @@ export const translations = {
       statusNew: "Nový projekt",
       statusActive: "V provozu",
       statusPrep: "V přípravě",
-      visit: "Navštívit web"
+      visit: "Navštívit web",
     },
     performance: {
       label: "Výkonnost",
-      title: "Stabilní zhodnocení pro investory",
-      subtitle: "Fondový kapitál (NAV) úspěšně roste díky diverzifikované strategii a profesionální správě portfolia.",
+      title: "Atraktivní zhodnocení pro investory",
+      subtitle:
+        "Fondový kapitál (NAV) úspěšně roste díky diverzifikované strategii a profesionální správě portfolia.",
+      riskWarning:
+        "Investice do prioritních investičních akcií fondu v sobě zahrnuje riziko kolísání aktuální hodnoty investované částky a výnosů z ní a že tudíž obvykle není zaručena návratnost původně investované částky.",
       chartLabel: "Fondový kapitál (NAV) v mld CZK",
       annualReturns: "Roční výkonnost PIA (% p.a.)",
       avgReturn: "Průměrná roční výnosnost",
@@ -146,62 +160,75 @@ export const translations = {
       revenue3: "Nájmy",
       leverageTitle: "Pákový efekt",
       leverage1: "hrubá hodnota aktiv",
-      leverage2: "závazková metoda"
+      leverage2: "závazková metoda",
     },
     benefits: {
       label: "Proč investovat",
       title: "Klíčové výhody fondu",
       benefit1title: "Široce diverzifikované portfolio",
-      benefit1desc: "Čtyři silné oblasti – Development, Nájemní bydlení, Energetika, Retail Parky – ve vzájemné synergii.",
+      benefit1desc:
+        "Čtyři silné oblasti – Development, Nájemní bydlení, Energetika, Retail Parky – ve vzájemné synergii.",
       benefit2title: "Prioritní výnos",
-      benefit2desc: "Mechanismus prioritního zhodnocení pro držitele PIA formou redistribuce fondového kapitálu od VIA.",
+      benefit2desc:
+        "Mechanismus prioritního zhodnocení pro držitele PIA formou redistribuce fondového kapitálu od VIA.",
       benefit3title: "Vysoká míra zajištění",
-      benefit3desc: "Poměr výkonnostních a prioritních investičních akcií dosahuje hodnoty přibližně 5:1.",
+      benefit3desc:
+        "Poměr výkonnostních a prioritních investičních akcií dosahuje hodnoty přibližně 5:1.",
       benefit4title: "Vysoká likvidita",
-      benefit4desc: "Investované prostředky s výplatou do 3 měsíců – fond jako likvidní složka portfolia.",
+      benefit4desc:
+        "Investované prostředky s výplatou do 3 měsíců – fond jako likvidní složka portfolia.",
       benefit5title: "Nízký ukazatel rizik",
-      benefit5desc: "SRI na úrovni 3 – historicky nízká volatilita a stabilita portfolia.",
+      benefit5desc:
+        "SRI na úrovni 3 – historicky nízká volatilita a stabilita portfolia.",
       benefit6title: "Minimální volatilita",
-      benefit6desc: "Stabilní výnosy podložené reálnými nemovitostními aktivy v klíčových regionech ČR."
+      benefit6desc:
+        "Atraktivní výnosy podložené reálnými nemovitostními aktivy v klíčových regionech ČR.",
     },
     team: {
       label: "Vedení fondu",
       title: "Zakladatelé, výkonné řízení a management",
-      subtitle: "Tým cca 30 profesionálů v oblastech developmentu, financí, marketingu a správy nemovitostí.",
-      managementLabel: "Management tým"
+      subtitle:
+        "Tým cca 30 profesionálů v oblastech developmentu, financí, marketingu a správy nemovitostí.",
+      managementLabel: "Management tým",
     },
     steps: {
       label: "Jak investovat",
       title: "Tři kroky k investici",
       step1num: "01",
       step1title: "Kontaktujte nás",
-      step1desc: "Napište na invest@spilberk.com nebo nás kontaktujte na +420 725 926 580. Připravíme individuální nabídku.",
+      step1desc:
+        "Napište na invest@spilberk.com nebo nás kontaktujte na +420 725 926 580. Připravíme individuální nabídku.",
       step2num: "02",
       step2title: "Onboarding investora",
-      step2desc: "Ověření kvalifikovaného investora dle § 272 ZISIF zajišťuje AVANT. Min. investice FKI: 1 mil. CZK.",
+      step2desc:
+        "Ověření kvalifikovaného investora dle § 272 ZISIF zajišťuje AVANT IS. Min. investice FKI: 1 mil. CZK.",
       step3num: "03",
       step3title: "Úpis akcií",
-      step3desc: "Měsíční frekvence úpisu PIA. Cílený prioritní výnos min. 7 % p.a. (max. 7,2 %). Zajištění VIA:PIA = 5:1."
+      step3desc:
+        "Měsíční frekvence úpisu PIA. Cílený prioritní výnos min. 7 % p.a. (max. 7,2 %). Zajištění VIA:PIA = 5:1.",
     },
     cta: {
       label: "Připraveni investovat?",
       title: "Stavíme nemovitosti, doručujeme výnos.",
-      subtitle: "2,6+ mld CZK pod správou · 36 SPV · SRI 3/7 · Cílený prioritní výnos min. 7 % p.a. · Likvidita do 3 měsíců",
+      subtitle:
+        "2,6+ mld CZK pod správou · 36 SPV · SRI 3/7 · Cílený prioritní výnos min. 7 % p.a. · Likvidita do 3 měsíců",
       invest: "Investujte s námi",
       badge1: "Nízké riziko",
       badge2: "Výnos PIA p.a.",
       badge3: "VIA : PIA",
       badge4: "Aktiva fondu",
       badge5: "Postavených bytů",
-      badge6: "SPV entit"
+      badge6: "SPV entit",
     },
     footer: {
-      disclaimer: "SPILBERK investiční fond SICAV, a.s. je fondem kvalifikovaných investorů dle zákona č. 240/2013 Sb. (ZISIF). Údaje o výkonnosti se týkají minulosti. Výkonnost v minulosti není spolehlivým ukazatelem budoucích výsledků. KID na avantfunds.cz.",
+      disclaimer:
+        "SPILBERK investiční fond SICAV, a.s. je fondem kvalifikovaných investorů dle zákona č. 240/2013 Sb. (ZISIF). Údaje o výkonnosti se týkají minulosti. Výkonnost v minulosti není spolehlivým ukazatelem budoucích výsledků. KID na avantfunds.cz.",
       fundLabel: "Fond",
       contactLabel: "Kontakt",
       legalLabel: "Právní informace",
-      extendedLegal: "SPILBERK investiční fond SICAV, a.s. je fondem kvalifikovaných investorů dle zákona č. 240/2013 Sb. o investičních společnostech a investičních fondech, jeho akcionářem se může stát výhradně kvalifikovaný investor dle § 272 tohoto zákona.\n\nAVANT investiční společnost, a.s. je správcem fondů kvalifikovaných investorů dle zákona 240/2013 Sb. a jejich akcionářem nebo podílníkem se může stát kvalifikovaný investor dle paragrafu 272 tohoto zákona.\n\nSdělení klíčových informací fondu (KID) je k dispozici na https://www.avantfunds.cz/cz/informacni-povinnost/. V listinné podobě lze uvedené informace získat v sídle společnosti AVANT investiční společnost, a.s., City Tower, Hvězdova 1716/2b, 140 00 Praha 4 - Nusle. Další důležité informace pro investory na: https://www.avantfunds.cz/cz/dulezite-informace/."
-    }
+      extendedLegal:
+        "SPILBERK investiční fond SICAV, a.s. je fondem kvalifikovaných investorů dle zákona č. 240/2013 Sb. o investičních společnostech a investičních fondech, jeho akcionářem se může stát výhradně kvalifikovaný investor dle § 272 tohoto zákona.\n\nAVANT investiční společnost, a.s. je správcem fondů kvalifikovaných investorů dle zákona 240/2013 Sb. a jejich akcionářem nebo podílníkem se může stát kvalifikovaný investor dle paragrafu 272 tohoto zákona.\n\nSdělení klíčových informací fondu (KID) je k dispozici na https://www.avantfunds.cz/cz/informacni-povinnost/. V listinné podobě lze uvedené informace získat v sídle společnosti AVANT investiční společnost, a.s., City Tower, Hvězdova 1716/2b, 140 00 Praha 4 - Nusle. Další důležité informace pro investory na: https://www.avantfunds.cz/cz/dulezite-informace/.",
+    },
   },
   en: {
     nav: {
@@ -212,23 +239,25 @@ export const translations = {
       team: "Team",
       contact: "Contact",
       invest: "Invest with us",
-      documents: "Documents"
+      documents: "Documents",
     },
     hero: {
       label: "spilberkfund.com · SPILBERK Investment Fund SICAV, a.s.",
       title1: "Building properties,",
       title2: "priority returns.",
       subtitle: "The cornerstone of your portfolio",
-      description: "Conservative real estate fund with 9+ years on the market. Targeted return min. 7% p.a., SRI 3/7, liquidity within 3 months. Four pillars of diversification, 36 SPV entities under management.",
+      description:
+        "Conservative real estate fund with 9+ years on the market. Targeted return min. 7% p.a., SRI 3/7, liquidity within 3 months. Four pillars of diversification, 36 SPV entities under management.",
       cta: "Invest with us",
       ctaSecondary: "About the Group",
       kpi1: "Fund assets under management",
       kpi2: "PIA return over last 12M",
       kpi3: "Summary risk indicator (SRI)",
-      kpi4: "Entities in fund structure"
+      kpi4: "Entities in fund structure",
     },
     trackRecord: {
       label: "Track record you can trust",
+      date: "Current as of April 2026",
       metric1: "completed residential units",
       metric1sub: "20,000+ m2 CPP",
       metric2: "completed projects",
@@ -246,12 +275,13 @@ export const translations = {
       extra5: "VIA : PIA security",
       extra6: "redemption period",
       extra7: "FVE Žatec",
-      extra8: "professionals in team"
+      extra8: "professionals in team",
     },
     about: {
       label: "About the Fund",
       title: "Fund in numbers",
-      subtitle: "In accordance with its status, the fund's strategy is to acquire various types of assets (real estate, real estate companies, securities, receivables, loans and credits) with the aim of creating a resilient and profitable portfolio.",
+      subtitle:
+        "In accordance with its status, the fund's strategy is to acquire various types of assets (real estate, real estate companies, securities, receivables, loans and credits) with the aim of creating a resilient and profitable portfolio.",
       row1key: "Fund assets under management",
       row2key: "Fund capital (NAV)",
       row3key: "Net profit 2024",
@@ -280,11 +310,13 @@ export const translations = {
       row17val: "15% within 3 years / 0% after 3 years",
       chartLabel: "Fund Capital (NAV) in bn CZK",
       sriTitle: "Summary Risk Indicator (SRI)",
-      sriDesc: "Fund classified in class 3 out of 7 — third lowest risk class. Low volatility of underlying assets and entire portfolio. Indicator assumes 4-year holding period.",
+      sriDesc:
+        "Fund classified in class 3 out of 7 — third lowest risk class. Low volatility of underlying assets and entire portfolio. Indicator assumes 4-year holding period.",
       guaranteeTitle1: "Targeted priority\nreturn p.a.",
       guaranteeTitle2: "PIA performance\nover last 12M",
       guaranteeTitle3: "Maximum\nPIA return p.a.",
-      guaranteeDesc: "Priority PIA appreciation mechanisms apply even in case of lower profit or fund loss — redistribution of fund capital from VIA in favor of PIA. Data as of Dec 31, 2024.",
+      guaranteeDesc:
+        "Priority PIA appreciation mechanisms apply even in case of lower profit or fund loss — redistribution of fund capital from VIA in favor of PIA. Data as of Dec 31, 2024.",
       governanceTitle: "Structure and governance",
       gov1key: "Investment manager",
       gov1val: "AVANT Investment Company, a.s.",
@@ -295,33 +327,39 @@ export const translations = {
       gov4key: "Auditor",
       gov4val: "AUDIT ONE s.r.o.",
       gov5key: "Accounting and tax advisor",
-      gov5val: "BDO Czech Republic s.r.o."
+      gov5val: "BDO Czech Republic s.r.o.",
     },
     strategy: {
       label: "Investment Strategy",
       title: "Four pillars of diversification",
-      subtitle: "Synergy of four investment areas increases performance and long-term stability of the entire fund.",
+      subtitle:
+        "Synergy of four investment areas increases performance and long-term stability of the entire fund.",
       pillar1name: "Development",
       pillar1stat: "725+ units",
       pillar1stat2: "15+ completed projects",
-      pillar1desc: "Small apartments in attractive urban locations. 1,354 apartments in pipeline, 60,000 m² planned CPP.",
+      pillar1desc:
+        "Small apartments in attractive urban locations. 1,354 apartments in pipeline, 60,000 m² planned CPP.",
       pillar2name: "Rental Housing",
       pillar2stat: "300+ units",
       pillar2stat2: "2 Urbanblok projects",
-      pillar2desc: "Urbanblok B45 + V24. 60% tenants are expats and students from 9+ countries. Rents above market average.",
+      pillar2desc:
+        "Urbanblok B45 + V24. 60% tenants are expats and students from 9+ countries. Rents above market average.",
       pillar3name: "Energy",
       pillar3stat: "124 MWp",
       pillar3stat2: "FVE Žatec, 3 phases",
-      pillar3desc: "One of the largest solar power plants in Czech Republic. Solar panels on own buildings' roofs, LDS, heat pumps.",
+      pillar3desc:
+        "One of the largest solar power plants in Czech Republic. Solar panels on own buildings' roofs, LDS, heat pumps.",
       pillar4name: "Retail Parks",
       pillar4stat: "3 → 8 parks",
       pillar4stat2: "Target by 2027",
-      pillar4desc: "100% occupancy of all 3 active parks. FUERTES partnership. Smaller towns, regional centers."
+      pillar4desc:
+        "100% occupancy of all 3 active parks. FUERTES partnership. Smaller towns, regional centers.",
     },
     projects: {
       label: "Project Portfolio",
       title: "Our projects",
-      subtitle: "Strategic presence in key Czech regions: Brno · Prague · Kladno · Klínovec · Mikulov",
+      subtitle:
+        "Strategic presence in key Czech regions: Brno · Prague · Kladno · Klínovec · Mikulov",
       all: "All",
       rental: "Rental Housing",
       development: "Development",
@@ -331,12 +369,15 @@ export const translations = {
       statusNew: "New project",
       statusActive: "Active",
       statusPrep: "In preparation",
-      visit: "Visit website"
+      visit: "Visit website",
     },
     performance: {
       label: "Performance",
-      title: "Stable appreciation for investors",
-      subtitle: "Fund capital (NAV) successfully grows thanks to diversified strategy and professional portfolio management.",
+      title: "Attractive appreciation for investors",
+      subtitle:
+        "Fund capital (NAV) successfully grows thanks to diversified strategy and professional portfolio management.",
+      riskWarning:
+        "Investment in the fund's priority investment shares involves the risk of fluctuations in the current value of the invested amount and the returns therefrom, and therefore, the return of the originally invested amount is usually not guaranteed.",
       chartLabel: "Fund Capital (NAV) in bn CZK",
       annualReturns: "Annual PIA performance (% p.a.)",
       avgReturn: "Average annual return",
@@ -348,62 +389,75 @@ export const translations = {
       revenue3: "Rents",
       leverageTitle: "Leverage effect",
       leverage1: "gross asset value",
-      leverage2: "commitment method"
+      leverage2: "commitment method",
     },
     benefits: {
       label: "Why Invest",
       title: "Key fund advantages",
       benefit1title: "Widely diversified portfolio",
-      benefit1desc: "Four strong areas – Development, Rental Housing, Energy, Retail Parks – in mutual synergy.",
+      benefit1desc:
+        "Four strong areas – Development, Rental Housing, Energy, Retail Parks – in mutual synergy.",
       benefit2title: "Priority return",
-      benefit2desc: "Priority appreciation mechanism for PIA holders via redistribution of fund capital from VIA.",
+      benefit2desc:
+        "Priority appreciation mechanism for PIA holders via redistribution of fund capital from VIA.",
       benefit3title: "High level of security",
-      benefit3desc: "Ratio of performance and priority investment shares reaches approximately 5:1.",
+      benefit3desc:
+        "Ratio of performance and priority investment shares reaches approximately 5:1.",
       benefit4title: "High liquidity",
-      benefit4desc: "Invested funds with payout within 3 months – fund as a liquid portfolio component.",
+      benefit4desc:
+        "Invested funds with payout within 3 months – fund as a liquid portfolio component.",
       benefit5title: "Low risk indicator",
-      benefit5desc: "SRI level 3 – historically low volatility and portfolio stability.",
+      benefit5desc:
+        "SRI level 3 – historically low volatility and portfolio stability.",
       benefit6title: "Minimal volatility",
-      benefit6desc: "Stable returns backed by real real estate assets in key Czech regions."
+      benefit6desc:
+        "Attractive returns backed by real real estate assets in key Czech regions.",
     },
     team: {
       label: "Fund Management",
       title: "Founders, executive management and operations",
-      subtitle: "Team of approximately 30 professionals in development, finance, marketing and property management.",
-      managementLabel: "Management team"
+      subtitle:
+        "Team of approximately 30 professionals in development, finance, marketing and property management.",
+      managementLabel: "Management team",
     },
     steps: {
       label: "How to Invest",
       title: "Three steps to investment",
       step1num: "01",
       step1title: "Contact us",
-      step1desc: "Write to invest@spilberk.com or contact us at +420 725 926 580. We will prepare an individual offer.",
+      step1desc:
+        "Write to invest@spilberk.com or contact us at +420 725 926 580. We will prepare an individual offer.",
       step2num: "02",
       step2title: "Investor onboarding",
-      step2desc: "Qualified investor verification according to § 272 ZISIF provided by AVANT. Min. investment FKI: 1 mil. CZK.",
+      step2desc:
+        "Qualified investor verification according to § 272 ZISIF provided by AVANT IS. Min. investment FKI: 1 mil. CZK.",
       step3num: "03",
       step3title: "Share subscription",
-      step3desc: "Monthly PIA subscription frequency. Targeted priority return min. 7% p.a. (max. 7.2%). VIA:PIA security = 5:1."
+      step3desc:
+        "Monthly PIA subscription frequency. Targeted priority return min. 7% p.a. (max. 7.2%). VIA:PIA security = 5:1.",
     },
     cta: {
       label: "Ready to invest?",
       title: "Building properties, delivering returns.",
-      subtitle: "2.6+ bn CZK under management · 36 SPV · SRI 3/7 · Targeted priority return min. 7% p.a. · Liquidity within 3 months",
+      subtitle:
+        "2.6+ bn CZK under management · 36 SPV · SRI 3/7 · Targeted priority return min. 7% p.a. · Liquidity within 3 months",
       invest: "Invest with us",
       badge1: "Low risk",
       badge2: "PIA return p.a.",
       badge3: "VIA : PIA",
       badge4: "Fund assets",
       badge5: "Built apartments",
-      badge6: "SPV entities"
+      badge6: "SPV entities",
     },
     footer: {
-      disclaimer: "SPILBERK Investment Fund SICAV, a.s. is a qualified investor fund according to Act No. 240/2013 Coll. (ZISIF). Performance data relate to the past. Past performance is not a reliable indicator of future results. KID at avantfunds.cz.",
+      disclaimer:
+        "SPILBERK Investment Fund SICAV, a.s. is a qualified investor fund according to Act No. 240/2013 Coll. (ZISIF). Performance data relate to the past. Past performance is not a reliable indicator of future results. KID at avantfunds.cz.",
       fundLabel: "Fund",
       contactLabel: "Contact",
       legalLabel: "Legal Information",
-      extendedLegal: "SPILBERK investment fund SICAV, a.s. is a fund of qualified investors according to Act No. 240/2013 Coll. on investment companies and investment funds, only a qualified investor according to Section 272 of this Act can become its shareholder.\n\nAVANT investment company, a.s. is the manager of funds of qualified investors according to Act 240/2013 Coll. and only a qualified investor according to Section 272 of this Act can become its shareholder or partner.\n\nKey Information Document (KID) is available at https://www.avantfunds.cz/en/information-obligation/. In paper form, the information can be obtained at the registered office of AVANT investment company, a.s., City Tower, Hvězdova 1716/2b, 140 00 Prague 4 - Nusle. Other important information for investors at: https://www.avantfunds.cz/en/important-information/."
-    }
+      extendedLegal:
+        "SPILBERK investment fund SICAV, a.s. is a fund of qualified investors according to Act No. 240/2013 Coll. on investment companies and investment funds, only a qualified investor according to Section 272 of this Act can become its shareholder.\n\nAVANT investment company, a.s. is the manager of funds of qualified investors according to Act 240/2013 Coll. and only a qualified investor according to Section 272 of this Act can become its shareholder or partner.\n\nKey Information Document (KID) is available at https://www.avantfunds.cz/en/information-obligation/. In paper form, the information can be obtained at the registered office of AVANT investment company, a.s., City Tower, Hvězdova 1716/2b, 140 00 Prague 4 - Nusle. Other important information for investors at: https://www.avantfunds.cz/en/important-information/.",
+    },
   },
   it: {
     nav: {
@@ -414,23 +468,25 @@ export const translations = {
       team: "Team",
       contact: "Contatto",
       invest: "Investi con noi",
-      documents: "Documenti"
+      documents: "Documenti",
     },
     hero: {
       label: "spilberkfund.com · SPILBERK Fondo di Investimento SICAV, a.s.",
       title1: "Costruire proprietà,",
       title2: "rendimento prioritario.",
       subtitle: "La pietra angolare del tuo portafoglio",
-      description: "Fondo immobiliare conservativo con 9+ anni sul mercato. Rendimento obiettivo min. 7% p.a., SRI 3/7, liquidità entro 3 mesi. Quattro pilastri di diversificazione, 36 entità SPV sotto gestione.",
+      description:
+        "Fondo immobiliare conservativo con 9+ anni sul mercato. Rendimento obiettivo min. 7% p.a., SRI 3/7, liquidità entro 3 mesi. Quattro pilastri di diversificazione, 36 entità SPV sotto gestione.",
       cta: "Investi con noi",
       ctaSecondary: "Informazioni sul gruppo",
       kpi1: "Patrimonio del fondo in gestione",
       kpi2: "Rendimento PIA ultimi 12M",
       kpi3: "Indicatore sintetico di rischio (SRI)",
-      kpi4: "Entità nella struttura del fondo"
+      kpi4: "Entità nella struttura del fondo",
     },
     trackRecord: {
       label: "Track record di cui puoi fidarti",
+      date: "Aggiornato ad aprile 2026",
       metric1: "unità residenziali completate",
       metric1sub: "20.000+ m2 CPP",
       metric2: "progetti completati",
@@ -448,12 +504,13 @@ export const translations = {
       extra5: "garanzia VIA : PIA",
       extra6: "periodo di rimborso",
       extra7: "FVE Žatec",
-      extra8: "professionisti nel team"
+      extra8: "professionisti nel team",
     },
     about: {
       label: "Informazioni sul Fondo",
       title: "Il fondo in numeri",
-      subtitle: "In conformità con il suo statuto, la strategia del fondo è quella di acquisire vari tipi di attività (immobili, società immobiliari, titoli, crediti, prestiti e finanziamenti) con l'obiettivo di creare un portafoglio resiliente e redditizio.",
+      subtitle:
+        "In conformità con il suo statuto, la strategia del fondo è quella di acquisire vari tipi di attività (immobili, società immobiliari, titoli, crediti, prestiti e finanziamenti) con l'obiettivo di creare un portafoglio resiliente e redditizio.",
       row1key: "Patrimonio del fondo in gestione",
       row2key: "Capitale del fondo (NAV)",
       row3key: "Utile netto 2024",
@@ -482,11 +539,13 @@ export const translations = {
       row17val: "15% entro 3 anni / 0% dopo 3 anni",
       chartLabel: "Capitale del Fondo (NAV) in mld CZK",
       sriTitle: "Indicatore Sintetico di Rischio (SRI)",
-      sriDesc: "Fondo classificato nella classe 3 su 7 — terza classe di rischio più bassa. Bassa volatilità degli asset sottostanti e dell'intero portafoglio. L'indicatore presume un periodo di detenzione di 4 anni.",
+      sriDesc:
+        "Fondo classificato nella classe 3 su 7 — terza classe di rischio più bassa. Bassa volatilità degli asset sottostanti e dell'intero portafoglio. L'indicatore presume un periodo di detenzione di 4 anni.",
       guaranteeTitle1: "Rendimento prioritario\nobiettivo p.a.",
       guaranteeTitle2: "Performance PIA\nultimi 12M",
       guaranteeTitle3: "Rendimento\nmax. PIA p.a.",
-      guaranteeDesc: "I meccanismi di apprezzamento prioritario PIA si applicano anche in caso di profitto inferiore o perdita del fondo — redistribuzione del capitale del fondo da VIA a favore di PIA. Dati al 31 dicembre 2024.",
+      guaranteeDesc:
+        "I meccanismi di apprezzamento prioritario PIA si applicano anche in caso di profitto inferiore o perdita del fondo — redistribuzione del capitale del fondo da VIA a favore di PIA. Dati al 31 dicembre 2024.",
       governanceTitle: "Struttura e governance",
       gov1key: "Gestore degli investimenti",
       gov1val: "AVANT Investment Company, a.s.",
@@ -497,33 +556,39 @@ export const translations = {
       gov4key: "Revisore",
       gov4val: "AUDIT ONE s.r.o.",
       gov5key: "Consulente contabile e fiscale",
-      gov5val: "BDO Czech Republic s.r.o."
+      gov5val: "BDO Czech Republic s.r.o.",
     },
     strategy: {
       label: "Strategia di Investimento",
       title: "Quattro pilastri di diversificazione",
-      subtitle: "La sinergia di quattro aree di investimento aumenta la performance e la stabilità a lungo termine dell'intero fondo.",
+      subtitle:
+        "La sinergia di quattro aree di investimento aumenta la performance e la stabilità a lungo termine dell'intero fondo.",
       pillar1name: "Sviluppo",
       pillar1stat: "725+ unità",
       pillar1stat2: "15+ progetti completati",
-      pillar1desc: "Piccoli appartamenti in località urbane attraenti. 1.354 appartamenti in pipeline, 60.000 m² CPP pianificato.",
+      pillar1desc:
+        "Piccoli appartamenti in località urbane attraenti. 1.354 appartamenti in pipeline, 60.000 m² CPP pianificato.",
       pillar2name: "Alloggi in Affitto",
       pillar2stat: "300+ unità",
       pillar2stat2: "2 progetti Urbanblok",
-      pillar2desc: "Urbanblok B45 + V24. 60% inquilini sono expat e studenti da 9+ paesi. Affitti sopra la media di mercato.",
+      pillar2desc:
+        "Urbanblok B45 + V24. 60% inquilini sono expat e studenti da 9+ paesi. Affitti sopra la media di mercato.",
       pillar3name: "Energia",
       pillar3stat: "124 MWp",
       pillar3stat2: "FVE Žatec, 3 fasi",
-      pillar3desc: "Una delle più grandi centrali solari nella Repubblica Ceca. Pannelli solari sui tetti di edifici propri, LDS, pompe di calore.",
+      pillar3desc:
+        "Una delle più grandi centrali solari nella Repubblica Ceca. Pannelli solari sui tetti di edifici propri, LDS, pompe di calore.",
       pillar4name: "Parchi Retail",
       pillar4stat: "3 → 8 parchi",
       pillar4stat2: "Obiettivo entro il 2027",
-      pillar4desc: "100% occupazione di tutti e 3 i parchi attivi. Partnership FUERTES. Piccole città, centri regionali."
+      pillar4desc:
+        "100% occupazione di tutti e 3 i parchi attivi. Partnership FUERTES. Piccole città, centri regionali.",
     },
     projects: {
       label: "Portfolio Progetti",
       title: "I nostri progetti",
-      subtitle: "Presenza strategica nelle regioni chiave della Repubblica Ceca: Brno · Praga · Kladno · Klínovec · Mikulov",
+      subtitle:
+        "Presenza strategica nelle regioni chiave della Repubblica Ceca: Brno · Praga · Kladno · Klínovec · Mikulov",
       all: "Tutti",
       rental: "Alloggi in Affitto",
       development: "Sviluppo",
@@ -533,12 +598,15 @@ export const translations = {
       statusNew: "Nuovo progetto",
       statusActive: "Attivo",
       statusPrep: "In preparazione",
-      visit: "Visita il sito"
+      visit: "Visita il sito",
     },
     performance: {
       label: "Performance",
-      title: "Apprezzamento stabile per gli investitori",
-      subtitle: "Il capitale del fondo (NAV) cresce con successo grazie alla strategia diversificata e alla gestione professionale del portafoglio.",
+      title: "Apprezzamento attrattivo per gli investitori",
+      subtitle:
+        "Il capitale del fondo (NAV) cresce con successo grazie alla strategia diversificata e alla gestione professionale del portafoglio.",
+      riskWarning:
+        "L'investimento in azioni d'investimento prioritarie del fondo comporta il rischio di fluttuazioni del valore attuale dell'importo investito e dei relativi rendimenti, pertanto il rimborso dell'importo originariamente investito di norma non è garantito.",
       chartLabel: "Capitale del Fondo (NAV) in mld CZK",
       annualReturns: "Performance annuale PIA (% p.a.)",
       avgReturn: "Rendimento annuale medio",
@@ -550,61 +618,74 @@ export const translations = {
       revenue3: "Affitti",
       leverageTitle: "Effetto leva",
       leverage1: "valore lordo degli asset",
-      leverage2: "metodo di impegno"
+      leverage2: "metodo di impegno",
     },
     benefits: {
       label: "Perché Investire",
       title: "Principali vantaggi del fondo",
       benefit1title: "Portfolio ampiamente diversificato",
-      benefit1desc: "Quattro aree forti – Sviluppo, Alloggi in Affitto, Energia, Parchi Retail – in sinergia reciproca.",
+      benefit1desc:
+        "Quattro aree forti – Sviluppo, Alloggi in Affitto, Energia, Parchi Retail – in sinergia reciproca.",
       benefit2title: "Rendimento prioritario",
-      benefit2desc: "Meccanismo di apprezzamento prioritario per i detentori di PIA tramite la ridistribuzione del capitale del fondo da VIA.",
+      benefit2desc:
+        "Meccanismo di apprezzamento prioritario per i detentori di PIA tramite la ridistribuzione del capitale del fondo da VIA.",
       benefit3title: "Alto livello di sicurezza",
-      benefit3desc: "Il rapporto tra azioni di performance e prioritarie raggiunge circa 5:1.",
+      benefit3desc:
+        "Il rapporto tra azioni di performance e prioritarie raggiunge circa 5:1.",
       benefit4title: "Alta liquidità",
-      benefit4desc: "Fondi investiti con pagamento entro 3 mesi – fondo come componente liquida del portafoglio.",
+      benefit4desc:
+        "Fondi investiti con pagamento entro 3 mesi – fondo come componente liquida del portafoglio.",
       benefit5title: "Indicatore di rischio basso",
-      benefit5desc: "SRI livello 3 – volatilità storicamente bassa e stabilità del portafoglio.",
+      benefit5desc:
+        "SRI livello 3 – volatilità storicamente bassa e stabilità del portafoglio.",
       benefit6title: "Volatilità minima",
-      benefit6desc: "Rendimenti stabili supportati da asset immobiliari reali nelle regioni chiave della Repubblica Ceca."
+      benefit6desc:
+        "Rendimenti attrattivi supportati da asset immobiliari reali nelle regioni chiave della Repubblica Ceca.",
     },
     team: {
       label: "Gestione del Fondo",
       title: "Fondatori, direzione esecutiva e operazioni",
-      subtitle: "Team di circa 30 professionisti nello sviluppo, finanza, marketing e gestione immobiliare.",
-      managementLabel: "Team di gestione"
+      subtitle:
+        "Team di circa 30 professionisti nello sviluppo, finanza, marketing e gestione immobiliare.",
+      managementLabel: "Team di gestione",
     },
     steps: {
       label: "Come Investire",
       title: "Tre passi per l'investimento",
       step1num: "01",
       step1title: "Contattaci",
-      step1desc: "Scrivi a invest@spilberk.com o contattaci al +420 725 926 580. Prepareremo un'offerta individuale.",
+      step1desc:
+        "Scrivi a invest@spilberk.com o contattaci al +420 725 926 580. Prepareremo un'offerta individuale.",
       step2num: "02",
       step2title: "Onboarding investitore",
-      step2desc: "Verifica dell'investitore qualificato secondo § 272 ZISIF fornita da AVANT. Investimento min. FKI: 1 mil. CZK.",
+      step2desc:
+        "Verifica dell'investitore qualificato secondo § 272 ZISIF fornita da AVANT IS. Investimento min. FKI: 1 mil. CZK.",
       step3num: "03",
       step3title: "Sottoscrizione azioni",
-      step3desc: "Frequenza di sottoscrizione PIA mensile. Rendimento prioritario obiettivo min. 7% p.a. (max. 7,2%). Garanzia VIA:PIA = 5:1."
+      step3desc:
+        "Frequenza di sottoscrizione PIA mensile. Rendimento prioritario obiettivo min. 7% p.a. (max. 7,2%). Garanzia VIA:PIA = 5:1.",
     },
     cta: {
       label: "Pronti a investire?",
       title: "Costruire proprietà, distribuire rendimenti.",
-      subtitle: "2,6+ mld CZK in gestione · 36 SPV · SRI 3/7 · Rendimento prioritario obiettivo min. 7% p.a. · Liquidità entro 3 mesi",
+      subtitle:
+        "2,6+ mld CZK in gestione · 36 SPV · SRI 3/7 · Rendimento prioritario obiettivo min. 7% p.a. · Liquidità entro 3 mesi",
       invest: "Investi con noi",
       badge1: "Basso rischio",
       badge2: "Rendimento PIA p.a.",
       badge3: "VIA : PIA",
       badge4: "Patrimonio del fondo",
       badge5: "Appartamenti costruiti",
-      badge6: "Entità SPV"
+      badge6: "Entità SPV",
     },
     footer: {
-      disclaimer: "SPILBERK Fondo di Investimento SICAV, a.s. è un fondo per investitori qualificati secondo la Legge n. 240/2013 Racc. (ZISIF). I dati sulla performance si riferiscono al passato. La performance passata non è un indicatore affidabile dei risultati futuri. KID su avantfunds.cz.",
+      disclaimer:
+        "SPILBERK Fondo di Investimento SICAV, a.s. è un fondo per investitori qualificati secondo la Legge n. 240/2013 Racc. (ZISIF). I dati sulla performance si riferiscono al passato. La performance passata non è un indicatore affidabile dei risultati futuri. KID su avantfunds.cz.",
       fundLabel: "Fondo",
       contactLabel: "Contatto",
       legalLabel: "Informazioni Legali",
-      extendedLegal: "SPILBERK Fondo di Investimento SICAV, a.s. è un fondo per investitori qualificati ai sensi della legge n. 240/2013 Racc. sulle società di investimento e i fondi di investimento; solo un investitore qualificato ai sensi della Sezione 272 di tale legge può diventarne azionista.\n\nAVANT società di investimento, a.s. è il gestore di fondi per investitori qualificati ai sensi della legge 240/2013 Racc. e solo un investitore qualificato ai sensi della Sezione 272 di tale legge può diventarne azionista o socio.\n\nIl Documento Informativo Chiave (KID) è disponibile su https://www.avantfunds.cz/en/information-obligation/. In formato cartaceo, le informazioni possono essere ottenute presso la sede legale di AVANT società di investimento, a.s., City Tower, Hvězdova 1716/2b, 140 00 Praga 4 - Nusle. Altre informazioni importanti per gli investitori su: https://www.avantfunds.cz/en/important-information/."
-    }
-  }
+      extendedLegal:
+        "SPILBERK Fondo di Investimento SICAV, a.s. è un fondo per investitori qualificati ai sensi della legge n. 240/2013 Racc. sulle società di investimento e i fondi di investimento; solo un investitore qualificato ai sensi della Sezione 272 di tale legge può diventarne azionista.\n\nAVANT società di investimento, a.s. è il gestore di fondi per investitori qualificati ai sensi della legge 240/2013 Racc. e solo un investitore qualificato ai sensi della Sezione 272 di tale legge può diventarne azionista o socio.\n\nIl Documento Informativo Chiave (KID) è disponibile su https://www.avantfunds.cz/en/information-obligation/. In formato cartaceo, le informazioni possono essere ottenute presso la sede legale di AVANT società di investimento, a.s., City Tower, Hvězdova 1716/2b, 140 00 Praga 4 - Nusle. Altre informazioni importanti per gli investitori su: https://www.avantfunds.cz/en/important-information/.",
+    },
+  },
 };

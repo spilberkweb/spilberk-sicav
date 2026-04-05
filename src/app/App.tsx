@@ -584,6 +584,7 @@ export default function App() {
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "45px 20px" }}>
           <div style={{ textAlign: "center", marginBottom: 24 }}>
             <span style={S.label}>{t.trackRecord.label}</span>
+            <div style={{ fontSize: 10, color: c.faint, textTransform: "uppercase", letterSpacing: 2, marginTop: -2, fontWeight: 500, opacity: 0.7 }}>{t.trackRecord.date}</div>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 160px), 1fr))", gap: 16 }}>
             {[
@@ -815,6 +816,9 @@ export default function App() {
         <div style={S.section}>
           <span style={S.label}>{t.performance.label}</span>
           <h2 style={S.h2}>{t.performance.title}</h2>
+          <p style={{ marginTop: -8, marginBottom: 28, fontSize: 15, color: c.muted, lineHeight: 1.6, maxWidth: 850, fontWeight: 500 }}>
+            {t.performance.riskWarning}
+          </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 400px), 1fr))", gap: 40 }}>
             <div style={{ ...S.kpi, padding: "40px 30px 40px 45px", display: "flex", flexDirection: "column", justifyContent: "center", position: "relative", overflow: "hidden" }}>
               <div style={{ display: "flex", gap: 8, justifyContent: "space-between", alignItems: "flex-end", position: "relative", zIndex: 1, minHeight: 180 }}>
