@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { translations, type Language } from "./translations";
 import { getProjectDesc, getTeamData } from "./projectData";
+import hevessyPhoto from "../assets/profile-photos/Jan_Hevessy_02.jpg";
+import simekPhoto from "../assets/profile-photos/martin-simek.jpg";
 
 function Counter({ end, suffix = "", prefix = "", decimals = 0, duration = 2000 }: {
   end: number;
@@ -261,11 +263,11 @@ export default function App() {
   const team = [
     { ...teamData[0], img: IMG.martin },
     { ...teamData[1], img: IMG.robert },
-    { ...teamData[2], img: null },
+    { ...teamData[2], img: hevessyPhoto },
     { ...teamData[3], img: IMG.matej },
     { ...teamData[4], img: IMG.sarka },
     { ...teamData[5], img: IMG.dominika },
-    { ...teamData[6], img: null },
+    { ...teamData[6], img: simekPhoto },
   ];
 
   const c = {
@@ -830,7 +832,7 @@ export default function App() {
                     </div>
                   ))}
                 </div>
-                
+
                 {[
                   { y: "2019", v: 7.0 },
                   { y: "2020", v: 7.0 },
