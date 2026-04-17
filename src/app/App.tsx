@@ -267,7 +267,7 @@ export default function App() {
     { ...teamData[3], img: IMG.matej },
     { ...teamData[4], img: IMG.sarka },
     { ...teamData[5], img: IMG.dominika },
-    { ...teamData[6], img: simekPhoto },
+    { ...teamData[6], img: simekPhoto, imgPos: "top" },
   ];
 
   const c = {
@@ -958,7 +958,7 @@ export default function App() {
             {team.slice(3).map((m, i) => (
               <div key={i} style={{ ...S.kpi, display: "flex", gap: 14, textAlign: "left", padding: "18px" }}>
                 {m.img ? (
-                  <img src={m.img} alt={m.name} style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: `2px solid ${c.border}` }} />
+                  <img src={m.img} alt={m.name} style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover", objectPosition: (m as any).imgPos ?? "center", flexShrink: 0, border: `2px solid ${c.border}` }} />
                 ) : (
                   <div style={{
                     width: 56,
