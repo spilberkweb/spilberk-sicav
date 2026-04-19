@@ -1,3 +1,0 @@
-{
-  "rewrites": [{ "source": "/((?!catalogue\\.pdf).*)", "destination": "/index.html" }]
-}
